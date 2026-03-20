@@ -1,53 +1,74 @@
-<script>
-  const username = "djthepcdude"; // or "DJTheNetrunna" if that's the real repo owner
-  const url = `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitHub Projects | DJ The PC Dude</title>
+  <meta name="description" content="Live GitHub project feed for DJ The PC Dude." />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white min-h-screen p-6 font-mono">
+  <main>
+    <h2 class="text-3xl font-bold mb-6">GitHub Projects</h2>
+    <div id="repo-list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+  </main>
 
-  fetch(url, {
-    headers: {
-      "Accept": "application/vnd.github+json"
-    }
-  })
-    .then(async (response) => {
-      if (!response.ok) {
-        const text = await response.text();
-        throw new Error(`GitHub API error ${response.status}: ${text}`);
+  <script>
+    const username = "djthepcdude"; // change if needed
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`;
+
+    fetch(apiUrl, {
+      headers: {
+        "Accept": "application/vnd.github+json"
       }
-      return response.json();
     })
-    .then((repos) => {
-      const container = document.getElementById("repo-list");
-      container.innerHTML = "";
+      .then(async (response) => {
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(`GitHub API error ${response.status}: ${text}`);
+        }
+        return response.json();
+      })
+      .then((repos) => {
+        const container = document.getElementById("repo-list");
 
-      if (!Array.isArray(repos) || repos.length === 0) {
-        container.innerHTML = '<p class="text-yellow-400">No public repositories found.</p>';
-        return;
-      }
+        if (!Array.isArray(repos) || repos.length === 0) {
+          container.innerHTML = '<p class="text-yellow-400">No repositories found.</p>';
+          return;
+        }
 
-      repos.forEach((repo) => {
-        const card = document.createElement("article");
-        card.className = "bg-gray-800 p-4 rounded-2xl shadow-lg neon-glow";
+        repos.forEach((repo) => {
+          const card = document.createElement("article");
+          card.className = "bg-gray-800 p-4 rounded-2xl shadow-lg";
 
-        const safeName = repo.name || "Untitled";
-        const safeDesc = repo.description || "No description yet.";
-        const safeLang = repo.language || "N/A";
-        const stars = Number(repo.stargazers_count || 0);
-        const repoUrl = repo.html_url || "#";
+          const safeName = repo.name || "Untitled";
+          const safeDesc = repo.description || "No description yet.";
+          const safeLang = repo.language || "N/A";
+          const stars = Number(repo.stargazers_count || 0);
+          const url = repo.html_url || "#";
 
-        card.innerHTML = `
-          <h3 class="text-xl font-semibold mb-2 text-cyan-400">${safeName}</h3>
-          <p class="text-gray-300 mb-2 text-sm">${safeDesc}</p>
-          <p class="text-xs text-gray-400">${safeLang} | ⭐ ${stars}</p>
-          <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" class="block mt-3 text-cyan-300 underline">
-            View on GitHub
-          </a>
+          card.innerHTML = `
+            <h3 class="text-xl font-semibold mb-2 text-cyan-400">${safeName}</h3>
+            <p class="text-gray-300 mb-2 text-sm">${safeDesc}</p>
+            <p class="text-xs text-gray-400">${safeLang} | ⭐ ${stars}</p>
+            <a href="${url}" target="_blank" rel="noopener noreferrer" class="block mt-3 text-cyan-300 underline">
+              View on GitHub
+            </a>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        document.getElementById("repo-list").innerHTML = `
+          <p class="text-red-400">Failed to load repositories.</p>
+          <p class="text-sm text-gray-400 mt-2">${err.message}</p>
         `;
-
-        container.appendChild(card);
       });
-    })
-    .catch((err) => {
-      console.error(err);
-      document.getElementById("repo-list").innerHTML =
-        `<p class="text-red-400">Failed to load repositories: ${err.message}</p>`;
-    });
-</script>
+  </script>
+
+  <script src="/assets/shared-layout.js" defer></script>
+</body>
+</html>

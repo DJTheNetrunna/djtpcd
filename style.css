@@ -1,303 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Share+Tech+Mono&display=swap");
+<header class="mb-8">
+  <nav class="bg-gray-900/90 border border-gray-800 rounded-2xl px-4 py-3 shadow-lg">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-cyan-400 font-bold text-lg">DJ The PC Dude</a>
 
-:root {
-  --bg-0: #040806;
-  --bg-1: #0a130e;
-  --surface: rgba(8, 20, 12, 0.86);
-  --surface-2: rgba(7, 18, 10, 0.94);
-  --line: rgba(85, 229, 129, 0.32);
-  --line-soft: rgba(85, 229, 129, 0.16);
-  --text: #ffe7ef;
-  --muted: #7ddff5;
-  --accent: #ff2a6d;
-  --accent-2: #2de2e6;
-  --danger: #ff6b6b;
-  --shadow: 0 0 26px rgba(85, 229, 129, 0.2);
-}
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden inline-flex items-center justify-center rounded-lg border border-gray-700 px-3 py-2 text-sm text-white hover:bg-gray-800"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        ☰
+      </button>
 
-* { box-sizing: border-box; }
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/" class="hover:text-cyan-400">Home</a>
+        <a href="/projects.html" class="hover:text-cyan-400">Projects</a>
+        <a href="/services.html" class="hover:text-cyan-400">Services</a>
+        <a href="/contact.html" class="hover:text-cyan-400">Contact</a>
+      </div>
+    </div>
 
-html, body {
-  margin: 0;
-  min-height: 100%;
-  font-family: "JetBrains Mono", monospace;
-  color: var(--text);
-  background:
-    radial-gradient(circle at 10% -10%, rgba(74, 179, 99, 0.2), transparent 36%),
-    radial-gradient(circle at 90% 0%, rgba(43, 120, 66, 0.2), transparent 34%),
-    linear-gradient(160deg, #010402 0%, #07100b 44%, #040806 100%);
-}
-
-body {
-  position: relative;
-  overflow-x: hidden;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-body::before {
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(20, 46, 27, 0.12) 0,
-    rgba(20, 46, 27, 0.12) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  mix-blend-mode: soft-light;
-}
-
-body::after {
-  background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.36) 100%);
-}
-
-main, header, section, footer, form {
-  position: relative;
-  z-index: 3;
-}
-
-header {
-  border: 0;
-  border-radius: 10px;
-  background: linear-gradient(180deg, var(--surface), var(--surface-2));
-  box-shadow: none;
-  max-width: 1100px;
-  margin: 20px auto 16px;
-}
-
-h1, h2, h3 {
-  font-family: "Share Tech Mono", monospace;
-  letter-spacing: 0.08em;
-}
-
-h1 {
-  color: var(--accent) !important;
-  text-shadow: 0 0 12px rgba(255, 42, 109, 0.65);
-}
-
-h2, h3 {
-  color: var(--accent-2) !important;
-}
-
-p, li, span, label {
-  color: var(--text);
-}
-
-a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--accent-2);
-}
-
-hr {
-  border: 0;
-  border-top: 1px dashed var(--line-soft);
-  max-width: 1100px;
-  margin: 16px auto;
-}
-
-section,
-form,
-footer,
-main {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Tailwind utility class overrides to match FilePortal style */
-.bg-gray-800,
-.bg-gray-900,
-.bg-black {
-  background: linear-gradient(180deg, rgba(7, 18, 10, 0.92), rgba(5, 14, 8, 0.94)) !important;
-}
-
-.text-cyan-400,
-.text-cyan-300,
-.text-cyan-500,
-.text-cyan-600 {
-  color: var(--accent-2) !important;
-}
-
-.text-gray-300,
-.text-gray-400,
-.text-gray-500 {
-  color: var(--muted) !important;
-}
-
-.rounded,
-.rounded-lg,
-.rounded-xl,
-.rounded-full {
-  border-radius: 10px !important;
-}
-
-.shadow,
-.shadow-lg {
-  box-shadow: var(--shadow) !important;
-}
-
-.border,
-.border-gray-700 {
-  border-color: var(--line) !important;
-}
-
-.grid > div,
-.portfolio-item,
-.neon-card,
-.card {
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--surface), var(--surface-2));
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.34);
-  transition: 160ms ease;
-}
-
-.grid > div:hover,
-.portfolio-item:hover,
-.neon-card:hover,
-.card:hover {
-  border-color: rgba(85, 229, 129, 0.52);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.48), var(--shadow);
-  transform: translateY(-2px);
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  border: 1px solid var(--line);
-  background: rgba(4, 13, 8, 0.92) !important;
-  color: var(--text) !important;
-  border-radius: 10px;
-  padding: 10px 12px;
-  font: inherit;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(85, 229, 129, 0.22);
-}
-
-button,
-.btn,
-[type="submit"] {
-  border: 1px solid rgba(137, 255, 172, 0.2);
-  border-radius: 10px;
-  color: #021004 !important;
-  background: linear-gradient(120deg, var(--accent), var(--accent-2)) !important;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 140ms ease;
-}
-
-button:hover,
-.btn:hover,
-[type="submit"]:hover {
-  transform: translateY(-1px);
-}
-
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.neon-glow:hover {
-  box-shadow: 0 0 10px rgba(45, 226, 230, 0.35), 0 0 20px rgba(45, 226, 230, 0.2) !important;
-}
-
-@media (max-width: 720px) {
-  body { font-size: 14px; }
-  header, section, form, footer, main { margin-left: 12px; margin-right: 12px; }
-}
-/* ===== GLASS CONTAINER ===== */
-.shared-shell {
-  text-align: center;
-  padding: 28px;
-  border-radius: 18px;
-
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
-}
-
-/* ===== TEXT STRUCTURE ===== */
-.shared-sub {
-  font-size: 1rem;
-  margin: 10px 0;
-}
-
-.shared-footer-tags {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-/* ===== LINK BASE ===== */
-.utility-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: transform 0.25s ease, text-shadow 0.25s ease;
-}
-
-.icon {
-  height: 1em;
-  width: 1em;
-}
-
-/* ===== BRAND COLORS ===== */
-.cash  { color: #00ff88; }
-.sms   { color: #3b82f6; }
-.call  { color: #22c55e; }
-.email { color: #f59e0b; }
-
-/* ===== PULSE ANIMATION ===== */
-@keyframes neonPulse {
-  0% {
-    text-shadow: 0 0 4px currentColor;
-  }
-  50% {
-    text-shadow:
-      0 0 10px currentColor,
-      0 0 20px currentColor;
-  }
-  100% {
-    text-shadow: 0 0 4px currentColor;
-  }
-}
-
-/* Apply pulse selectively */
-.pulse {
-  animation: neonPulse 2.8s infinite ease-in-out;
-}
-
-/* ===== HOVER LIFT ===== */
-.utility-link:hover {
-  transform: translateY(-3px);
-  text-shadow:
-    0 0 12px currentColor,
-    0 0 24px currentColor;
-}
+    <div id="mobile-menu" class="hidden md:hidden mt-3 border-t border-gray-800 pt-3">
+      <div class="flex flex-col gap-3 text-sm">
+        <a href="/" class="block rounded-lg px-3 py-2 hover:bg-gray-800 hover:text-cyan-400">Home</a>
+        <a href="/projects.html" class="block rounded-lg px-3 py-2 hover:bg-gray-800 hover:text-cyan-400">Projects</a>
+        <a href="/services.html" class="block rounded-lg px-3 py-2 hover:bg-gray-800 hover:text-cyan-400">Services</a>
+        <a href="/contact.html" class="block rounded-lg px-3 py-2 hover:bg-gray-800 hover:text-cyan-400">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>

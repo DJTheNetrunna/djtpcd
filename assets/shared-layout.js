@@ -179,7 +179,7 @@
         theme: "cashapp-theme"
       },
       {
-    t: "🚀 Hostinger: Build your site fast + cheap hosting",
+    t: "🚀 Hostinger: Build your site fast + cheap hosting | hostinger.com",
         link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT",
         theme: "hostinger-theme"
       }

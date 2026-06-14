@@ -46,23 +46,7 @@
     `;
   }
 
-  function renderStatusStrip() {
-    if (document.getElementById('shared-status')) return;
-    const el = document.createElement('div');
-    el.id = 'shared-status';
-    el.className = 'shared-status';
-    el.innerHTML = `
-      <div class="shared-shell">
-        <span class="status-dot"></span>
-        <strong>STATUS: ONLINE</strong>
-        <span>Typical reply 15-60 min</span>
-        <span>Emergency tier: 08:00-22:00</span>
-      </div>
-    `;
-    document.body.prepend(el);
-  }
-
-  function renderMobileCta() {
+ function renderMobileCta() {
     if (document.getElementById('shared-mobile-cta')) return;
     const cta = document.createElement('div');
     cta.id = 'shared-mobile-cta';

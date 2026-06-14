@@ -1,7 +1,7 @@
 (function () {
   const CONTACT = {
-    phone: "+1-206-981-1429",
-    sms: "+12069811429",
+    phone: "+1-425-565-4257",
+    sms: "+14255654257",
     email: "contact@djthepcdude.com"
   };
 

@@ -1,14 +1,14 @@
 (function () {
-  const isFile = window.location.protocol === "file:";
+  const isFile = location.protocol === "file:";
 
   const BASE = (() => {
     if (isFile) return "";
 
-    const parts = window.location.pathname.split("/").filter(Boolean);
+    const pathParts = location.pathname.split("/").filter(Boolean);
 
     // GitHub Pages repo detection
-    if (parts.length > 0) {
-      return "/" + parts[0] + "/";
+    if (pathParts.length > 0) {
+      return "/" + pathParts[0] + "/";
     }
 
     return "/";
@@ -22,9 +22,5 @@
     return BASE + path.replace(/^\/+/, "");
   }
 
-  function asset(path) {
-    return to(path);
-  }
-
-  window.ROUTER = { to, asset, base: BASE };
+  window.ROUTER = { to, base: BASE };
 })();

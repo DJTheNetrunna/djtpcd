@@ -36,18 +36,21 @@
       <div class="shared-shell">
         <h1 class="shared-brand">DJ THE PC DUDE</h1>
         <div class="shared-sub">SEATTLE TECH OPS // FILEPORTAL STYLE</div>
+
         <div class="shared-tools">
           <a href="tel:${CONTACT.phone}" class="utility-link">CALL</a>
           <a href="sms:${CONTACT.sms}" class="utility-link">SMS</a>
           <a href="mailto:${CONTACT.email}" class="utility-link">EMAIL</a>
         </div>
+
         <nav class="shared-nav">${nav}</nav>
       </div>
     `;
   }
 
- function renderMobileCta() {
+  function renderMobileCta() {
     if (document.getElementById('shared-mobile-cta')) return;
+
     const cta = document.createElement('div');
     cta.id = 'shared-mobile-cta';
     cta.className = 'shared-mobile-cta';
@@ -56,6 +59,7 @@
       <a href="sms:${CONTACT.sms}">Text</a>
       <a href="/pages/services.html">Pricing</a>
     `;
+
     document.body.appendChild(cta);
   }
 
@@ -65,69 +69,163 @@
 
     footer.innerHTML = `
       <div class="shared-shell">
-        <a href="https://cash.app/$CabbagePatch206"
-   target="_blank"
-   rel="noopener"
-   class="utility-link cash pulse">
 
-        <p class="shared-sub shared-footer-tags">
+        <div class="shared-footer-tags">
           <a href="sms:${CONTACT.sms}" class="utility-link">SMS</a>
           <a href="tel:${CONTACT.phone}" class="utility-link">Call</a>
           <a href="mailto:${CONTACT.email}" class="utility-link">Backup Email</a>
+        </div>
+
         <p>&copy; 2025 DJ The PC Dude. All rights reserved.</p>
-        </p>
-        <p class="shared-sub shared-footer-tags">
+
+        <div class="shared-footer-tags">
           <a href="/pages/privacy.html" class="utility-link">Privacy</a>
           <a href="/pages/terms.html" class="utility-link">Terms</a>
           <a href="/pages/faq.html" class="utility-link">FAQ</a>
           <a href="/pages/case-studies.html" class="utility-link">Case Studies</a>
-        </p>
+        </div>
+
       </div>
     `;
   }
 
-  function initAnalytics() {
-    fetch('/assets/site-config.json')
-      .then((r) => (r.ok ? r.json() : null))
-      .then((cfg) => {
-        if (!cfg || !cfg.analytics || !cfg.analytics.enabled) return;
-        if (document.getElementById('analytics-loader')) return;
-        const s = document.createElement('script');
-        s.id = 'analytics-loader';
-        s.defer = true;
-        s.src = cfg.analytics.script;
-        if (cfg.analytics.domain) s.setAttribute('data-domain', cfg.analytics.domain);
-        document.head.appendChild(s);
-      })
-      .catch(function () {});
+  function renderStatusStrip() {
+    if (document.getElementById('shared-status')) return;
+
+    const el = document.createElement('div');
+    el.id = 'shared-status';
+    el.className = 'shared-status';
+
+    el.innerHTML = `
+      <div class="shared-shell">
+        <span class="status-dot"></span>
+        <strong>STATUS: ONLINE</strong>
+        <span>Typical reply 15-60 min</span>
+        <span>Emergency tier: 08:00-22:00</span>
+      </div>
+
+      <div class="cashapp-referral-banner">
+        <a id="cashappBannerLink"
+           href="https://cash.app/app/GTRXMJJ"
+           target="_blank"
+           rel="noopener noreferrer">
+          💸 Get $5 when you send $5+ with Cash App. Use code GTRXMJJ
+        </a>
+      </div>
+    `;
+
+    document.body.prepend(el);
   }
 
   function ensureStyle() {
     if (document.getElementById('shared-layout-style')) return;
+
     const style = document.createElement('style');
     style.id = 'shared-layout-style';
+
     style.textContent = `
       .shared-shell { max-width: 1100px; margin: 0 auto; }
       .shared-brand { margin: 0; font-family: "Share Tech Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
       .shared-sub { margin-top: 6px; font-size: .82rem; color: var(--muted, #7ddff5); }
       .shared-tools { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
       .shared-nav { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
-      .nav-link { padding: 7px 10px; border: 0; border-radius: 8px; color: var(--muted, #7ddff5); text-decoration: none; font-size: .82rem; }
-      .nav-link:hover { color: var(--accent-2, #2de2e6); }
+
+      .nav-link { padding: 7px 10px; border-radius: 8px; color: var(--muted, #7ddff5); text-decoration: none; font-size: .82rem; }
       .nav-active { color: var(--text, #ffe7ef); }
-      .utility-link { padding: 5px 8px; border: 1px solid var(--line, rgba(85,229,129,.32)); border-radius: 8px; text-decoration: none; color: var(--muted, #7ddff5); font-size: .8rem; margin-right: 4px; display: inline-block; }
-      .utility-link:hover { color: var(--accent-2, #2de2e6); border-color: rgba(85,229,129,.52); }
-      .shared-status { border-bottom: 1px solid var(--line, rgba(85,229,129,.32)); padding: 8px 14px; font-size: .82rem; color: var(--muted, #7ddff5); position: sticky; top: 0; z-index: 25; background: rgba(3, 13, 8, .95); backdrop-filter: blur(3px); }
-      .shared-status .shared-shell { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-      .status-dot { width: 8px; height: 8px; border-radius: 999px; background: #57e582; box-shadow: 0 0 8px #57e582; }
-      .shared-footer-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; }
-      .shared-footer-tags .utility-link { padding: 3px 6px; font-size: .72rem; margin-right: 0; }
+
+      .utility-link {
+        padding: 5px 8px;
+        border: 1px solid var(--line, rgba(85,229,129,.32));
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--muted, #7ddff5);
+        font-size: .8rem;
+        margin-right: 4px;
+        display: inline-block;
+      }
+
+      .shared-status {
+        border-bottom: 1px solid var(--line, rgba(85,229,129,.32));
+        padding: 8px 14px;
+        font-size: .82rem;
+        color: var(--muted, #7ddff5);
+        position: sticky;
+        top: 0;
+        z-index: 25;
+        background: rgba(3, 13, 8, .95);
+        backdrop-filter: blur(3px);
+      }
+
+      .shared-status .shared-shell {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #57e582;
+        box-shadow: 0 0 8px #57e582;
+      }
+
       .shared-mobile-cta { display: none; }
+
       @media (max-width: 760px) {
-        .shared-mobile-cta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; position: fixed; left: 12px; right: 12px; bottom: 10px; z-index: 35; }
-        .shared-mobile-cta a { text-align: center; padding: 10px 8px; text-decoration: none; border-radius: 8px; border: 1px solid var(--line, rgba(85,229,129,.32)); color: var(--text, #ffe7ef); background: rgba(5,15,9,.95); font-size: .84rem; }
+        .shared-mobile-cta {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+          position: fixed;
+          left: 12px;
+          right: 12px;
+          bottom: 10px;
+          z-index: 35;
+        }
+
+        .shared-mobile-cta a {
+          text-align: center;
+          padding: 10px 8px;
+          border-radius: 8px;
+          border: 1px solid var(--line, rgba(85,229,129,.32));
+          color: var(--text, #ffe7ef);
+          background: rgba(5,15,9,.95);
+          font-size: .84rem;
+          text-decoration: none;
+        }
+      }
+
+      .cashapp-referral-banner {
+        background: linear-gradient(90deg,
+          rgba(0,214,50,.15),
+          rgba(45,226,230,.15));
+        border-top: 1px solid rgba(0,214,50,.35);
+        border-bottom: 1px solid rgba(0,214,50,.35);
+        text-align: center;
+        padding: 12px;
+        font-weight: 700;
+        backdrop-filter: blur(6px);
+      }
+
+      .cashapp-referral-banner a {
+        color: #57e582;
+        text-decoration: none;
+        display: block;
+        transition: .2s ease;
+      }
+
+      .cashapp-referral-banner a:hover {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(87,229,130,.8);
+      }
+
+      .cashapp-referral-banner strong {
+        color: #2de2e6;
       }
     `;
+
     document.head.appendChild(style);
   }
 
@@ -138,29 +236,45 @@
     renderFooter();
     renderMobileCta();
     initAnalytics();
+
+    /* CASH APP ROTATION */
+    const cashMessages = [
+      "💸 Get $5 when you send $5+ with Cash App. Use code GTRXMJJ",
+      "🚀 Support DJ The PC Dude while getting your $5 bonus",
+      "⚡ New Cash App users get $5 free with code GTRXMJJ",
+      "💚 Fast payments for PC repairs, websites, and tech support"
+    ];
+
+    let cashIndex = 0;
+
+    setInterval(() => {
+      const banner = document.getElementById("cashappBannerLink");
+      if (!banner) return;
+
+      cashIndex = (cashIndex + 1) % cashMessages.length;
+      banner.innerHTML = cashMessages[cashIndex];
+    }, 5000);
   });
-})();
 
-document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+  function initAnalytics() {
+    fetch('/assets/site-config.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((cfg) => {
+        if (!cfg?.analytics?.enabled) return;
+        if (document.getElementById('analytics-loader')) return;
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
+        const s = document.createElement('script');
+        s.id = 'analytics-loader';
+        s.defer = true;
+        s.src = cfg.analytics.script;
 
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', String(isHidden));
-      menuBtn.textContent = isHidden ? '✕' : '☰';
-    });
+        if (cfg.analytics.domain) {
+          s.setAttribute('data-domain', cfg.analytics.domain);
+        }
 
-    // auto-close on link click
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.textContent = '☰';
-      });
-    });
+        document.head.appendChild(s);
+      })
+      .catch(() => {});
   }
-});
+
+})();

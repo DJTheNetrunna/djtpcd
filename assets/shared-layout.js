@@ -179,7 +179,17 @@
         theme: "cashapp-theme"
       },
       {
-    t: "🚀 Hostinger: Build your site fast + cheap hosting | hostinger.com",
+        text: "💸 Click HERE To Sign Up Now! | Cash.App",
+        link: "https://cash.app/app/GTRXMJJ",
+        theme: "cashapp-theme"
+      },
+      {
+        text: "🚀 Hostinger: Build your site fast + cheap hosting",
+        link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT",
+        theme: "hostinger-theme"
+      }
+    ];
+        text: "🚀 Click HERE for Details | Hostinger.com ",
         link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT",
         theme: "hostinger-theme"
       }

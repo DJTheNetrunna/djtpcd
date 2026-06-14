@@ -1,5 +1,209 @@
 (function () {
   const CONTACT = {
+    phone: "+1-206-981-1429",
+    sms: "+12069811429",
+    email: "contact@djthepcdude.com"
+  };
+
+  function path() {
+    return (window.location.pathname || "/").replace(/\/+/g, "/");
+  }
+
+  function link(href, label, match) {
+    const url = window.ROUTER ? ROUTER.to(href) : href;
+    const active = match(path()) ? "nav-active" : "";
+    return `<a href="${url}" class="nav-link ${active}">${label}</a>`;
+  }
+
+  function renderHeader() {
+    const el = document.querySelector("header");
+    if (!el) return;
+
+    el.innerHTML = `
+      <div class="shared-shell">
+        <h1 class="shared-brand">DJ THE PC DUDE</h1>
+
+        <div class="shared-tools">
+          <a href="tel:${CONTACT.phone}" class="utility-link">CALL</a>
+          <a href="sms:${CONTACT.sms}" class="utility-link">SMS</a>
+          <a href="mailto:${CONTACT.email}" class="utility-link">EMAIL</a>
+        </div>
+
+        <nav class="shared-nav">
+          ${link("index.html", "Home", p => p === "/" || p.endsWith("index.html"))}
+          ${link("pages/services.html", "Services", p => p.includes("services"))}
+          ${link("pages/blog.html", "Blog", p => p.includes("blog"))}
+          ${link("pages/faq.html", "FAQ", p => p.includes("faq"))}
+          ${link("pages/github.html", "GitHub", p => p.includes("github"))}
+          ${link("pages/donate.html", "Donate", p => p.includes("donate"))}
+        </nav>
+      </div>
+    `;
+  }
+
+  function renderFooter() {
+    const el = document.querySelector("footer");
+    if (!el) return;
+
+    el.innerHTML = `
+      <div class="shared-shell">
+        <p>&copy; 2025 DJ The PC Dude</p>
+
+        <div class="shared-footer-tags">
+          <a href="${ROUTER.to("pages/privacy.html")}" class="utility-link">Privacy</a>
+          <a href="${ROUTER.to("pages/terms.html")}" class="utility-link">Terms</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderMobileCTA() {
+    if (document.getElementById("shared-mobile-cta")) return;
+
+    const cta = document.createElement("div");
+    cta.id = "shared-mobile-cta";
+    cta.className = "shared-mobile-cta";
+
+    cta.innerHTML = `
+      <a href="tel:${CONTACT.phone}">Call</a>
+      <a href="sms:${CONTACT.sms}">Text</a>
+      <a href="${ROUTER.to("pages/services.html")}">Services</a>
+    `;
+
+    document.body.appendChild(cta);
+  }
+
+  function renderStatusStrip() {
+    if (document.getElementById("shared-status")) return;
+
+    const el = document.createElement("div");
+    el.id = "shared-status";
+    el.className = "shared-status";
+
+    el.innerHTML = `
+      <div class="shared-shell">
+        <span class="status-dot"></span>
+        <strong>STATUS: ONLINE</strong>
+        <span>15–60 min response</span>
+      </div>
+
+      <div class="cashapp-referral-banner cashapp-theme">
+        <a id="promoBanner"
+           href="https://cash.app/app/GTRXMJJ"
+           target="_blank"
+           rel="noopener">
+          Loading promo...
+        </a>
+      </div>
+    `;
+
+    document.body.prepend(el);
+  }
+
+  function ensureStyle() {
+    if (document.getElementById("shared-style")) return;
+
+    const style = document.createElement("style");
+    style.id = "shared-style";
+
+    style.textContent = `
+      .shared-shell{max-width:1100px;margin:0 auto;}
+      .shared-brand{font-family:monospace;text-transform:uppercase;letter-spacing:.12em;}
+
+      .shared-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+      .nav-link{color:#7ddff5;text-decoration:none;}
+      .nav-active{color:#fff;}
+
+      .utility-link{padding:5px 8px;border:1px solid rgba(255,255,255,.2);border-radius:8px;}
+
+      .shared-status{
+        position:sticky;top:0;z-index:50;
+        background:#07130f;
+        padding:10px;
+      }
+
+      .cashapp-referral-banner{
+        text-align:center;
+        padding:12px;
+        font-weight:700;
+      }
+
+      .cashapp-theme{
+        background:linear-gradient(90deg,rgba(0,214,50,.15),rgba(45,226,230,.15));
+      }
+
+      .hostinger-theme{
+        background:linear-gradient(90deg,rgba(120,0,255,.2),rgba(255,100,0,.15));
+      }
+
+      .shared-mobile-cta{
+        display:none;
+      }
+
+      @media(max-width:760px){
+        .shared-mobile-cta{
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          position:fixed;
+          bottom:10px;
+          left:10px;
+          right:10px;
+          gap:8px;
+        }
+
+        .shared-mobile-cta a{
+          text-align:center;
+          padding:10px;
+          background:#111;
+          border-radius:8px;
+          color:#fff;
+          text-decoration:none;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    ensureStyle();
+    renderStatusStrip();
+    renderHeader();
+    renderFooter();
+    renderMobileCTA();
+
+    const promos = [
+      {
+        text: "💸 Cash App: Get $5 when you send $5+ (GTRXMJJ)",
+        link: "https://cash.app/app/GTRXMJJ",
+        theme: "cashapp-theme"
+      },
+      {
+    t: "🚀 Hostinger: Build your site fast + cheap hosting",
+        link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT",
+        theme: "hostinger-theme"
+      }
+    ];
+
+    let i = 0;
+
+    setInterval(() => {
+      const banner = document.getElementById("promoBanner");
+      const wrapper = document.querySelector(".cashapp-referral-banner");
+      if (!banner || !wrapper) return;
+
+      i = (i + 1) % promos.length;
+      const p = promos[i];
+
+      banner.textContent = p.text;
+      banner.href = p.link;
+
+      wrapper.className = "cashapp-referral-banner " + p.theme;
+    }, 5000);
+  });
+
+})();(function () {
+  const CONTACT = {
     phone: '+1-206-981-1429',
     sms: '+12069811429',
     email: 'contact@djthepcdude.com'

@@ -239,11 +239,6 @@
         theme: "cashapp-theme"
       },
       {
-        text: "🏦 $100 for you + $100 for a friend with Chime (direct deposit required)",
-        link: "https://www.chime.com/",
-        theme: "cashapp-theme"
-      },
-      {
         text: "🚀 Build your website with Hostinger — fast hosting + AI builder",
         link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT",
         theme: "hostinger-theme"

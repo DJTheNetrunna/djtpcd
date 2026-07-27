@@ -50,13 +50,24 @@
           <a href="mailto:${CONTACT.email}" class="utility-link">EMAIL</a>
         </div>
 
-        <nav class="shared-nav">
+        <nav class="shared-nav" aria-label="Main navigation">
           <a href="${safe("index.html")}" class="nav-link">Home</a>
           <a href="${safe("pages/services.html")}" class="nav-link">Services</a>
           <a href="${safe("pages/blog.html")}" class="nav-link">Blog</a>
           <a href="${safe("pages/faq.html")}" class="nav-link">FAQ</a>
           <a href="${safe("pages/github.html")}" class="nav-link">GitHub</a>
           <a href="${safe("pages/donate.html")}" class="nav-link">Donate</a>
+
+          <a
+            href="https://djthenetrunna.github.io/dj-tech-academy/earn-with-tech.html"
+            class="nav-link inline-flex items-center gap-2 rounded-xl border-2 border-amber-300 bg-gradient-to-r from-amber-400 via-yellow-300 to-cyan-300 px-4 py-2 font-black text-gray-950 shadow-lg shadow-amber-500/30 transition duration-200 hover:-translate-y-0.5 hover:scale-105 hover:shadow-xl hover:shadow-amber-400/40 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-gray-900"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Earn With Tech — opens in a new tab"
+          >
+            <span aria-hidden="true">💸</span>
+            <span>Earn With Tech</span>
+          </a>
         </nav>
       </div>
     `;
@@ -134,7 +145,6 @@
 
       banner.textContent = promos[i].text;
       banner.href = promos[i].link;
-
       wrapper.className =
         "cashapp-referral-banner " + promos[i].theme;
     }, 5000);

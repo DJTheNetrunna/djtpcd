@@ -31,7 +31,7 @@
           ${link("pages/faq.html", "FAQ")}
           ${link("pages/github.html", "GitHub")}
           ${link("pages/donate.html", "Donate")}
-          ${link("https://djthenetrunna.github.io/dj-tech-academy/", "DJ's Tech Academy!"
+          ${link("https://djthenetrunna.github.io/dj-tech-academy/", "DJ's Tech Academy!")}
         </nav>
       </div>
     `;

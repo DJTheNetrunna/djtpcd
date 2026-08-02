@@ -1,8 +1,8 @@
 (function () {
   const CONTACT = {
-    phone: "+1-206-981-1429",
-    sms: "+12069811429",
-    email: "contact@djthepcdude.com"
+    phone: "+1-425-565-4257",
+    sms: "+14255654257",
+    email: "austinejones37@gmail.com"
   };
 
   function link(href, label) {
@@ -16,7 +16,7 @@
 
     el.innerHTML = `
       <div class="shared-shell">
-        <h1 class="shared-brand">DJ THE PC DUDE</h1>
+        <h1 class="shared-brand">DJ THE "PC" DUDE</h1>
 
         <div class="shared-tools">
           <a href="tel:${CONTACT.phone}" class="utility-link">CALL</a>
@@ -31,6 +31,7 @@
           ${link("pages/faq.html", "FAQ")}
           ${link("pages/github.html", "GitHub")}
           ${link("pages/donate.html", "Donate")}
+          ${link("https://djthenetrunna.github.io/dj-tech-academy/", "DJ's Tech Academy!"
         </nav>
       </div>
     `;
@@ -42,7 +43,7 @@
 
     el.innerHTML = `
       <div class="shared-shell">
-        <p>© 2025 DJ THE PC DUDE</p>
+        <p>© 2026 DJ THE PC DUDE</p>
 
         <div class="shared-footer-tags">
           <a href="${ROUTER.to("pages/privacy.html")}">Privacy</a>

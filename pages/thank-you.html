@@ -2,38 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thank You | DJ The PC Dude</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="robots" content="noindex, follow"/>
+  <meta name="robots" content="noindex, follow" />
   <meta name="author" content="DJ The PC Dude" />
   <meta name="description" content="Thank you for submitting your request to DJ The PC Dude." />
-  <link rel="canonical" href="https://djthepcdude.com/thank-you.html" />
-
-  <!-- Tailwind CDN -->
+  <link rel="canonical" href="https://djthepcdude.com/pages/thank-you.html" />
+  <link rel="stylesheet" href="/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Branding -->
 </head>
-<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen flex flex-col justify-center items-center p-6">
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
+  <header></header>
 
-  <header class="text-center mb-10">
-    <h1 class="text-4xl font-bold text-cyan-400 mb-2">Thank You!</h1>
-    <p class="text-lg text-gray-300">Your submission was received. I’ll be in touch soon.</p>
-  </header>
+  <main class="flex min-h-[55vh] items-center justify-center">
+    <section class="fade-in-up card w-full max-w-2xl p-6 md:p-10 text-center">
+      <span class="hero-eyebrow">Request Received</span>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">Thank You.</h1>
+      <p class="text-lg mb-6">Your message was received. I’ll review what you sent and get back to you as soon as I can.</p>
+      <p class="mb-7 text-sm">For urgent computer problems, text is usually the fastest way to reach me.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/" class="hero-cta">Back Home</a>
+        <a href="sms:+12069811429" class="hero-cta">Text DJ</a>
+        <a href="/pages/services.html" class="hero-cta">View Services</a>
+      </div>
+    </section>
+  </main>
 
-  <section class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-md text-center">
-    <p class="text-md mb-6 text-gray-200">
-      Whether you're recycling parts, requesting a repair, or just saying what's up — I got you.
-    </p>
-
-    <a href="../index.html" class="inline-block px-6 py-3 bg-cyan-500 text-black font-bold rounded hover:bg-cyan-600 transition">
-      ← Back to Home
-    </a>
-  </section>
-
-  <footer class="mt-12 text-sm text-gray-500 text-center">
-    &copy; 2025 DJ The PC Dude | Built for Yesler, Chinatown, and the CD
-  </footer>
-
+  <footer></footer>
+  <script src="/assets/shared-layout.js" defer></script>
 </body>
 </html>

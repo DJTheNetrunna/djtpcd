@@ -12,17 +12,33 @@
   <meta property="og:url" content="https://djthepcdude.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://djthepcdude.com/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/djpcd-logo.svg" />
   <link rel="stylesheet" href="/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
-  <header class="p-6"></header>
+  <header></header>
 
-  <main class="p-6 space-y-8">
-    <section id="hero" class="fade-in-up">
-      <h2 class="text-3xl font-bold mb-2">Seattle's Trusted Tech Fixer</h2>
-      <p>Custom PC builds, expert repairs, malware cleanup, and performance tuning.</p>
-      <p class="mt-3"><a class="underline" href="/pages/services.html">View Services & Pricing</a></p>
+  <main>
+    <section id="hero" class="fade-in-up hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">DJ The PC Dude • Seattle Tech Support</span>
+        <h2>Seattle's Trusted Tech Fixer</h2>
+        <p>Custom PC builds, expert repairs, malware cleanup, and performance tuning with straight answers and practical solutions.</p>
+        <a class="hero-cta" href="/pages/services.html">View Services & Pricing</a>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <img
+          src="/assets/images/djpcd-logo.svg"
+          class="hero-logo"
+          alt=""
+          width="180"
+          height="180"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
     </section>
 
     <section id="about" class="fade-in-up card p-4">
@@ -40,7 +56,7 @@
       </div>
     </section>
 
-    <section class="card p-4">
+    <section class="fade-in-up card p-4">
       <h3 class="text-2xl font-bold mb-2">Client Feedback</h3>
       <p>"No upsell pressure, just straight answers and a fixed machine."</p>
       <p>"Fast turnaround and explained everything in plain language."</p>
@@ -65,8 +81,8 @@
     </section>
   </main>
 
-  <footer class="p-6 text-center"></footer>
-<script src="assets/router.js"></script>
-<script src="script.js"></script>
+  <footer></footer>
+  <script src="assets/router.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

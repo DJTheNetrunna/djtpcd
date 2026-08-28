@@ -9,9 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Check internal and external links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --accept 200,429 './**/*.html' './README.md'
+          args: >-
+            --root-dir "$(pwd)"
+            --verbose
+            --no-progress
+            --accept 200,429
+            --exclude '^https://www\.reuters\.com/'
+            --exclude '^https://formspree\.io/'
+            './**/*.html'
+            './README.md'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

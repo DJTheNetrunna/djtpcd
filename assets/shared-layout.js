@@ -22,34 +22,31 @@
     return BASE + path.replace(/^\/+/, "");
   }
 
-  function loadHolidayTheme() {
-    if (window.DJHolidayTheme || document.querySelector("script[data-djpcd-holiday-theme]")) return;
-    const script = document.createElement("script");
-    script.src = to("assets/holiday-theme.js");
-    script.dataset.djpcdHolidayTheme = "true";
-    document.head.appendChild(script);
-  }
-
-  function loadThemeEngine() {
-    if (window.DJThemeEngine) {
-      loadHolidayTheme();
+  function loadOnce(src, dataKey, globalName, onLoad) {
+    if (globalName && window[globalName]) {
+      if (onLoad) onLoad();
       return;
     }
-
-    const existing = document.querySelector("script[data-djpcd-theme-engine]");
+    const existing = document.querySelector(`script[data-${dataKey}]`);
     if (existing) {
-      existing.addEventListener("load", loadHolidayTheme, { once: true });
+      if (onLoad) existing.addEventListener("load", onLoad, { once: true });
       return;
     }
-
     const script = document.createElement("script");
-    script.src = to("assets/theme-engine.js");
-    script.dataset.djpcdThemeEngine = "true";
-    script.addEventListener("load", loadHolidayTheme, { once: true });
+    script.src = to(src);
+    script.dataset[dataKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = "true";
+    if (onLoad) script.addEventListener("load", onLoad, { once: true });
     document.head.appendChild(script);
   }
 
-  loadThemeEngine();
+  function loadGlobalEnhancements() {
+    loadOnce("assets/theme-engine.js", "djpcd-theme-engine", "DJThemeEngine", () => {
+      loadOnce("assets/holiday-theme.js", "djpcd-holiday-theme", "DJHolidayTheme");
+    });
+    loadOnce("assets/social-share.js", "djpcd-social-share", "DJSocialShare");
+  }
+
+  loadGlobalEnhancements();
 
   function normalizedPath(value) {
     try {
@@ -80,10 +77,7 @@
   }
 
   function ensureSharedStyles() {
-    const hasMainStyles = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).some((link) => {
-      const href = link.getAttribute("href") || "";
-      return /(?:^|\/)style\.css(?:\?|#|$)/i.test(href);
-    });
+    const hasMainStyles = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).some((link) => /(?:^|\/)style\.css(?:\?|#|$)/i.test(link.getAttribute("href") || ""));
     if (hasMainStyles || document.getElementById("djpcd-shared-fallback-style")) return;
 
     const style = document.createElement("style");
@@ -157,11 +151,7 @@
   function renderFooter() {
     const footer = document.querySelector("footer");
     if (!footer) return;
-    footer.innerHTML = `
-      <div class="shared-shell">
-        <div class="footer-copy"><p>© 2026 DJ THE PC DUDE</p><p class="footer-disclaimer">Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.</p></div>
-        <div class="shared-footer-tags"><a href="${to("pages/intake-checklist.html")}" class="utility-link">Intake</a><a href="${to("pages/wifi.html")}" class="utility-link">Wi-Fi</a><a href="${to("pages/privacy.html")}" class="utility-link">Privacy</a><a href="${to("pages/terms.html")}" class="utility-link">Terms</a></div>
-      </div>`;
+    footer.innerHTML = `<div class="shared-shell"><div class="footer-copy"><p>© 2026 DJ THE PC DUDE</p><p class="footer-disclaimer">Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.</p></div><div class="shared-footer-tags"><a href="${to("pages/intake-checklist.html")}" class="utility-link">Intake</a><a href="${to("pages/wifi.html")}" class="utility-link">Wi-Fi</a><a href="${to("pages/privacy.html")}" class="utility-link">Privacy</a><a href="${to("pages/terms.html")}" class="utility-link">Terms</a></div></div>`;
   }
 
   function renderMobileCTA() {
@@ -180,10 +170,9 @@
     }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       });
     }, { threshold: 0.08 });
     document.querySelectorAll(".fade-in-up").forEach((el) => observer.observe(el));

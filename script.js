@@ -1,15 +1,54 @@
 (function () {
   const CONTACT = {
-    phone: "+1-206-981-1429",
+    phone: "+12069811429",
     sms: "+12069811429",
     email: "contact@djthepcdude.com"
   };
 
-  function safe(path) {
-    if (!path) return "";
-    if (path.startsWith("http")) return path;
-    if (path.startsWith("#")) return path;
-    return window.ROUTER ? ROUTER.to(path) : path;
+  function siteBase() {
+    if (location.protocol === "file:") return "";
+    if (location.hostname.endsWith(".github.io")) {
+      const first = location.pathname.split("/").filter(Boolean)[0];
+      return first ? `/${first}/` : "/";
+    }
+    return "/";
+  }
+
+  const BASE = siteBase();
+
+  function to(path) {
+    if (!path) return BASE;
+    if (/^(?:[a-z]+:)?\/\//i.test(path) || /^(?:mailto|tel|sms):/i.test(path) || path.startsWith("#")) {
+      return path;
+    }
+    return BASE + path.replace(/^\/+/, "");
+  }
+
+  function normalizedPath(value) {
+    try {
+      const url = new URL(value, location.href);
+      return decodeURIComponent(url.pathname)
+        .replace(/\/index\.html$/i, "/")
+        .replace(/\/+$/, "/")
+        .toLowerCase();
+    } catch {
+      return "";
+    }
+  }
+
+  function isActive(target, match) {
+    const current = normalizedPath(location.href);
+    if (match === "home") {
+      const basePath = normalizedPath(new URL(BASE, location.origin).href);
+      return current === basePath;
+    }
+    return current.includes(match.toLowerCase());
+  }
+
+  function navLink(path, label, match, extraClass = "") {
+    const href = to(path);
+    const active = isActive(href, match);
+    return `<a href="${href}" class="nav-link ${active ? "is-active" : ""} ${extraClass}"${active ? ' aria-current="page"' : ""}>${label}</a>`;
   }
 
   function ensureBrandAssets() {
@@ -17,7 +56,7 @@
       const favicon = document.createElement("link");
       favicon.rel = "icon";
       favicon.type = "image/svg+xml";
-      favicon.href = safe("assets/images/djpcd-logo.svg");
+      favicon.href = to("assets/images/djpcd-logo.svg");
       favicon.dataset.djpcdFavicon = "true";
       document.head.appendChild(favicon);
     }
@@ -25,19 +64,15 @@
 
   function renderStatusStrip() {
     if (document.getElementById("shared-status")) return;
-
     const el = document.createElement("div");
     el.id = "shared-status";
     el.className = "shared-status";
-
     el.innerHTML = `
       <div class="shared-shell">
-        <span class="status-dot"></span>
-        <strong>STATUS: ONLINE</strong>
-        <span>Typical reply 15–60 min</span>
-      </div>
-    `;
-
+        <span class="status-dot" aria-hidden="true"></span>
+        <strong>SEATTLE FREELANCE TECH</strong>
+        <span>Independent • Self-taught • Practical support</span>
+      </div>`;
     document.body.prepend(el);
   }
 
@@ -47,47 +82,34 @@
 
     header.innerHTML = `
       <div class="shared-shell">
-        <a href="${safe("index.html")}" class="brand-lockup" aria-label="DJ The PC Dude home">
-          <img
-            src="${safe("assets/images/djpcd-logo.svg")}" 
-            class="brand-logo"
-            alt="DJ The PC Dude logo"
-            width="180"
-            height="180"
-          />
+        <a href="${to("index.html")}" class="brand-lockup" aria-label="DJ The PC Dude home">
+          <img src="${to("assets/images/djpcd-logo.svg")}" class="brand-logo" alt="DJ The PC Dude logo" width="180" height="180" />
           <span class="brand-copy">
             <span class="brand-name">DJ THE \"PC\" DUDE</span>
             <span class="brand-subtitle">Seattle PC Repair • Builds • Optimization</span>
           </span>
         </a>
 
-        <div class="shared-tools">
+        <div class="shared-tools" aria-label="Contact options">
           <a href="tel:${CONTACT.phone}" class="utility-link">CALL</a>
-          <a href="sms:${CONTACT.sms}" class="utility-link">SMS</a>
+          <a href="sms:${CONTACT.sms}" class="utility-link">TEXT</a>
           <a href="mailto:${CONTACT.email}" class="utility-link">EMAIL</a>
         </div>
 
         <nav class="shared-nav" aria-label="Main navigation">
-          <a href="${safe("index.html")}" class="nav-link">Home</a>
-          <a href="${safe("pages/services.html")}" class="nav-link">Services</a>
-          <a href="${safe("pages/blog.html")}" class="nav-link">Blog</a>
-          <a href="${safe("pages/faq.html")}" class="nav-link">FAQ</a>
-          <a href="${safe("pages/github.html")}" class="nav-link">GitHub</a>
-          <a href="${safe("pages/donate.html")}" class="nav-link">Donate</a>
-
-          <a
-            href="https://djthenetrunna.github.io/dj-tech-academy/"
-            class="nav-link inline-flex items-center gap-2 rounded-xl border-2 border-amber-300 bg-gradient-to-r from-amber-400 via-yellow-300 to-cyan-300 px-4 py-2 font-black text-gray-950 shadow-lg shadow-amber-500/30 transition duration-200 hover:-translate-y-0.5 hover:scale-105 hover:shadow-xl hover:shadow-amber-400/40 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="DJ Tech Academy — opens in a new tab"
-          >
-            <span aria-hidden="true">🎓</span>
-            <span>DJ Tech Academy</span>
-          </a>
+          ${navLink("index.html", "Home", "home")}
+          ${navLink("pages/services.html", "Services", "/pages/services.html")}
+          ${navLink("pages/blog.html", "Blog", "/pages/blog.html")}
+          ${navLink("pages/faq.html", "FAQ", "/pages/faq.html")}
+          ${navLink("pages/case-studies.html", "Case Studies", "/pages/case-studies.html")}
+          ${navLink("pages/encrypt%20decrypt%20tool/index.html", "Tools", "/encrypt decrypt tool/")}
+          ${navLink("pages/recycle.html", "Recycle", "/pages/recycle.html")}
+          ${navLink("pages/github.html", "GitHub", "/pages/github.html")}
+          ${navLink("pages/donate.html", "Donate", "/pages/donate.html")}
+          <a href="${to("index.html#contact")}" class="nav-link">Contact</a>
+          <a href="https://djthenetrunna.github.io/dj-tech-academy/" class="nav-link academy-link" target="_blank" rel="noopener noreferrer">🎓 Tech Academy</a>
         </nav>
-      </div>
-    `;
+      </div>`;
   }
 
   function renderFooter() {
@@ -96,63 +118,43 @@
 
     footer.innerHTML = `
       <div class="shared-shell">
-        <div>
+        <div class="footer-copy">
           <p>© 2026 DJ THE PC DUDE</p>
-          <p class="mt-2 text-xs text-gray-400">
-            Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.
-          </p>
+          <p class="footer-disclaimer">Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.</p>
         </div>
-
         <div class="shared-footer-tags">
-          <a href="${safe("pages/privacy.html")}" class="utility-link">Privacy</a>
-          <a href="${safe("pages/terms.html")}" class="utility-link">Terms</a>
+          <a href="${to("pages/intake-checklist.html")}" class="utility-link">Intake</a>
+          <a href="${to("pages/wifi.html")}" class="utility-link">Wi-Fi</a>
+          <a href="${to("pages/privacy.html")}" class="utility-link">Privacy</a>
+          <a href="${to("pages/terms.html")}" class="utility-link">Terms</a>
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
   function renderMobileCTA() {
     if (document.getElementById("shared-mobile-cta")) return;
-
     const el = document.createElement("div");
     el.id = "shared-mobile-cta";
     el.className = "shared-mobile-cta";
-
     el.innerHTML = `
       <a href="tel:${CONTACT.phone}">Call</a>
       <a href="sms:${CONTACT.sms}">Text</a>
-      <a href="${safe("pages/services.html")}">Services</a>
-    `;
-
+      <a href="${to("pages/services.html")}">Services</a>`;
     document.body.appendChild(el);
   }
 
   function initPromos() {
     const banner = document.getElementById("promoBanner");
     const wrapper = document.querySelector(".cashapp-referral-banner");
-
     if (!banner || !wrapper) return;
 
     const promos = [
-      {
-        text: "💸 Cash App: Get $5 when you send $5+ (GTRXMJJ)",
-        link: "https://cash.app/app/GTRXMJJ",
-        theme: "cashapp-theme"
-      },
-      {
-        text: "🏦 Chime: $100 bonus with qualifying direct deposit",
-        link: "https://www.chime.com/",
-        theme: "cashapp-theme"
-      },
-      {
-        text: "🚀 Hostinger: Fast hosting + domain deals",
-        link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT",
-        theme: "hostinger-theme"
-      }
+      { text: "💸 Cash App: Get $5 when you send $5+ (GTRXMJJ)", link: "https://cash.app/app/GTRXMJJ", theme: "cashapp-theme" },
+      { text: "🏦 Chime: $100 bonus with qualifying direct deposit", link: "https://www.chime.com/", theme: "cashapp-theme" },
+      { text: "🚀 Hostinger: Fast hosting + domain deals", link: "https://www.hostinger.com?REFERRALCODE=0E5HXMMXR5CT", theme: "hostinger-theme" }
     ];
 
     let i = 0;
-
     setInterval(() => {
       i = (i + 1) % promos.length;
       banner.textContent = promos[i].text;
@@ -167,26 +169,22 @@
     const title = document.getElementById("latest-blog-title");
     const meta = document.getElementById("latest-blog-meta");
     const summary = document.getElementById("latest-blog-summary");
-
     if (!announcement || !link || !title || !meta || !summary) return;
 
     try {
-      const response = await fetch("/pages/blog.html", { cache: "no-store" });
+      const response = await fetch(to("pages/blog.html"), { cache: "no-store" });
       if (!response.ok) throw new Error(`Blog request failed: ${response.status}`);
 
       const html = await response.text();
-      const blogDocument = new DOMParser().parseFromString(html, "text/html");
-      const newestPost = blogDocument.querySelector("main article");
-
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const newestPost = doc.querySelector("main article");
       if (!newestPost) throw new Error("No blog articles found");
 
       const postLink = newestPost.querySelector("h1 a, h2 a, h3 a, a[href*='assets/posts']");
       if (!postLink) throw new Error("Newest blog article has no post link");
 
       const rawHref = postLink.getAttribute("href");
-      const postTitle = postLink.textContent.trim();
       const paragraphs = Array.from(newestPost.querySelectorAll("p"));
-
       const dateParagraph = paragraphs.find((p) => /^Posted\b/i.test(p.textContent.trim()));
       const categoryParagraph = paragraphs.find((p) => {
         const text = p.textContent.trim();
@@ -197,25 +195,19 @@
         return text.length >= 40 && !/^Posted\b/i.test(text);
       });
 
-      const blogPageUrl = new URL("/pages/blog.html", window.location.origin);
+      const blogPageUrl = new URL(to("pages/blog.html"), location.origin);
       const resolvedPostUrl = new URL(rawHref, blogPageUrl);
-
       const category = categoryParagraph
         ? categoryParagraph.textContent.trim().replace(/\s*•\s*New\s*$/i, "")
         : "Latest Post";
-
       const date = dateParagraph
         ? dateParagraph.textContent.trim().replace(/^Posted(?:\s+on)?\s*/i, "")
         : "";
 
       link.href = resolvedPostUrl.href;
-      title.textContent = postTitle;
+      title.textContent = postLink.textContent.trim();
       meta.textContent = date ? `${category} • ${date}` : category;
-
-      if (summaryParagraph) {
-        summary.textContent = summaryParagraph.textContent.trim();
-      }
-
+      if (summaryParagraph) summary.textContent = summaryParagraph.textContent.trim();
       announcement.dataset.latestBlogLoaded = "true";
     } catch (error) {
       console.warn("Latest blog announcement is using its built-in fallback.", error);
@@ -223,15 +215,18 @@
   }
 
   function initFadeIn() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    if (!("IntersectionObserver" in window)) {
+      document.querySelectorAll(".fade-in-up").forEach((el) => el.classList.add("visible"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
     document.querySelectorAll(".fade-in-up").forEach((el) => observer.observe(el));
   }
 

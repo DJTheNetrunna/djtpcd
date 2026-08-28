@@ -1,0 +1,63 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DJ The PC Dude | Seattle PC Repair & Custom Builds</title>
+  <meta name="description" content="Seattle PC repair, malware cleanup, custom builds, and performance tuning with clear pricing and fast response." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="DJ The PC Dude | Seattle PC Repair & Custom Builds" />
+  <meta property="og:description" content="Fast diagnostics, honest repair, and custom builds across Seattle neighborhoods." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://djthepcdude.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://djthepcdude.com/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/djpcd-logo.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
+  <header></header>
+
+  <main>
+    <section id="hero" class="fade-in-up hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">DJ The PC Dude • Seattle Tech Support</span>
+        <h2>Seattle's Trusted Tech Fixer</h2>
+        <p>Custom PC builds, expert repairs, malware cleanup, and performance tuning with straight answers and practical solutions.</p>
+        <a class="hero-cta" href="/pages/services.html">View Services & Pricing</a>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <img
+          src="/assets/images/djpcd-logo.svg"
+          class="hero-logo"
+          alt=""
+          width="180"
+          height="180"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+<h1>2.4GHz Wifi ENJOY! -DJ #403<h1>
+
+<img src="../assets/images/wifi.png" alt="wifi access qrcode">
+<br>
+
+    <section id="about" class="fade-in-up card p-4">
+      <h3 class="text-2xl font-bold mb-2">About</h3>
+      <p>DJ runs a neighborhood-first tech service focused on honest diagnostics, practical fixes, and respectful client support.</p>
+    </section>
+
+    <section class="fade-in-up">
+      <h3 class="text-2xl font-bold mb-3">Popular Services</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gray-800 p-4 rounded-xl shadow neon-glow"><h4 class="text-cyan-400 font-semibold mb-2">Diagnostics & Repair</h4><p>Boot issues, crashes, overheating, and hardware faults.</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow neon-glow"><h4 class="text-cyan-400 font-semibold mb-2">Optimization</h4><p>Speed tuning, startup cleanup, and gaming performance fixes.</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow neon-glow"><h4 class="text-cyan-400 font-semibold mb-2">Custom Builds</h4><p>Balanced part lists and clean, stable builds for your budget.</p></div>
+        <div class="bg-gray-800 p-4 rounded-xl shadow neon-glow"><h4 class="text-cyan-400 font-semibold mb-2">Remote Support</h4><p>Quick software troubleshooting and config guidance.</p></div>
+      </div>
+    </section>
+
+  </main>

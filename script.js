@@ -12,9 +12,17 @@
     return window.ROUTER ? ROUTER.to(path) : path;
   }
 
-  /* =========================
-     STATUS STRIP
-  ========================== */
+  function ensureBrandAssets() {
+    if (!document.querySelector('link[data-djpcd-favicon]')) {
+      const favicon = document.createElement("link");
+      favicon.rel = "icon";
+      favicon.type = "image/svg+xml";
+      favicon.href = safe("assets/images/djpcd-logo.svg");
+      favicon.dataset.djpcdFavicon = "true";
+      document.head.appendChild(favicon);
+    }
+  }
+
   function renderStatusStrip() {
     if (document.getElementById("shared-status")) return;
 
@@ -33,16 +41,25 @@
     document.body.prepend(el);
   }
 
-  /* =========================
-     HEADER / NAV
-  ========================== */
   function renderHeader() {
     const header = document.querySelector("header");
     if (!header) return;
 
     header.innerHTML = `
       <div class="shared-shell">
-        <h1 class="shared-brand">DJ THE PC DUDE</h1>
+        <a href="${safe("index.html")}" class="brand-lockup" aria-label="DJ The PC Dude home">
+          <img
+            src="${safe("assets/images/djpcd-logo.svg")}" 
+            class="brand-logo"
+            alt="DJ The PC Dude logo"
+            width="180"
+            height="180"
+          />
+          <span class="brand-copy">
+            <span class="brand-name">DJ THE \"PC\" DUDE</span>
+            <span class="brand-subtitle">Seattle PC Repair • Builds • Optimization</span>
+          </span>
+        </a>
 
         <div class="shared-tools">
           <a href="tel:${CONTACT.phone}" class="utility-link">CALL</a>
@@ -73,16 +90,13 @@
     `;
   }
 
-  /* =========================
-     FOOTER
-  ========================== */
   function renderFooter() {
     const footer = document.querySelector("footer");
     if (!footer) return;
 
     footer.innerHTML = `
       <div class="shared-shell">
-        <p>© 2025 DJ THE PC DUDE</p>
+        <p>© 2026 DJ THE PC DUDE</p>
 
         <div class="shared-footer-tags">
           <a href="${safe("pages/privacy.html")}" class="utility-link">Privacy</a>
@@ -92,9 +106,6 @@
     `;
   }
 
-  /* =========================
-     MOBILE CTA
-  ========================== */
   function renderMobileCTA() {
     if (document.getElementById("shared-mobile-cta")) return;
 
@@ -111,9 +122,6 @@
     document.body.appendChild(el);
   }
 
-  /* =========================
-     PROMO BANNER ROTATION
-  ========================== */
   function initPromos() {
     const banner = document.getElementById("promoBanner");
     const wrapper = document.querySelector(".cashapp-referral-banner");
@@ -142,58 +150,32 @@
 
     setInterval(() => {
       i = (i + 1) % promos.length;
-
       banner.textContent = promos[i].text;
       banner.href = promos[i].link;
-      wrapper.className =
-        "cashapp-referral-banner " + promos[i].theme;
+      wrapper.className = "cashapp-referral-banner " + promos[i].theme;
     }, 5000);
   }
 
-  /* =========================
-     INIT
-  ========================== */
+  function initFadeIn() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".fade-in-up").forEach((el) => observer.observe(el));
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
+    ensureBrandAssets();
     renderStatusStrip();
     renderHeader();
     renderFooter();
     renderMobileCTA();
     initPromos();
+    initFadeIn();
   });
-})();// scripts.js
-
-// 🌙 Dark Mode Toggle
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('toggleTheme');
-  const userPref = localStorage.getItem('theme');
-
-  if (userPref === 'dark') {
-    document.body.classList.add('dark');
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem(
-        'theme',
-        document.body.classList.contains('dark') ? 'dark' : 'light'
-      );
-    });
-  }
-
-  // ✨ Fade-in on scroll
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  document.querySelectorAll('section, header, footer').forEach((el) => {
-    observer.observe(el);
-  });
-});
+})();

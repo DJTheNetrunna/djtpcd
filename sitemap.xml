@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://djthepcdude.com/</loc></url>
-  <url><loc>https://djthepcdude.com/pages/services.html</loc></url>
-  <url><loc>https://djthenetrunna.github.io/dj-tech-academy/earn-with-tech.html</loc></url>
-  <url><loc>https://djthepcdude.com/pages/blog.html</loc></url>
-  <url><loc>https://djthepcdude.com/assets/posts/seattle-ai-ontrade-2026.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url>
+    <loc>https://djthepcdude.com/</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://djthepcdude.com/pages/services.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://djthepcdude.com/pages/blog.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://djthepcdude.com/assets/posts/tech-that-matters-seattle-south-end-2026-08-28.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://djthepcdude.com/assets/posts/seattle-ai-ontrade-2026.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://djthepcdude.com/assets/posts/post1.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
+    <loc>https://djthepcdude.com/assets/posts/post2.html</loc>
+    <lastmod>2026-08-28</lastmod>
+  </url>
   <url><loc>https://djthepcdude.com/pages/faq.html</loc></url>
   <url><loc>https://djthepcdude.com/pages/case-studies.html</loc></url>
   <url><loc>https://djthepcdude.com/pages/privacy.html</loc></url>

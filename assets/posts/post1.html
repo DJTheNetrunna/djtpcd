@@ -1,139 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post Title | DJ The PC Dude</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5 Practical Ways I Tune Up Slow Windows PCs | DJ The PC Dude</title>
+  <meta name="description" content="Practical Windows PC tune-up steps for startup bloat, browser clutter, background apps, updates, storage, and performance." />
+  <link rel="canonical" href="https://djthepcdude.com/assets/posts/post1.html" />
+  <link rel="stylesheet" href="/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-  <header class="bg-gray-900 text-white p-6 shadow-md">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">DJ The PC Dude</h1>
-      <a href="../../pages/blog.html" class="hover:underline">← Back to Blog</a>
-    </div>
-  </header>
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
+  <header></header>
 
-  <main class="max-w-3xl mx-auto p-6">
-    <h2 class="text-3xl font-bold mb-4">
-# The Tricks I Use When Tuning Up Client PCs
-</h2>
-    <p class="text-gray-600 mb-6">Posted on DATE • by DJ The PC Dude</p>
-    
-    <div class="prose lg:prose-lg">
-      <p>
-When someone hands me their computer and says, *“It’s running slow”*, I already know what I’m about to find: too many startup apps, background bloatware, and forgotten utilities quietly eating away at performance. Over time, even the fastest machine can feel like it’s crawling. That’s where a proper tune-up comes in.
+  <main class="max-w-4xl space-y-6">
+    <article class="card p-6 md:p-8">
+      <span class="hero-eyebrow">PC Tune-Up Guide</span>
+      <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4">5 Practical Ways I Tune Up Slow Windows PCs</h1>
+      <p class="text-gray-400 mb-7">Posted August 28, 2025 • DJ The PC Dude</p>
 
-Here’s a peek behind the curtain at the exact steps and lightweight tools I use when bringing sluggish PCs back to life.
----
+      <p class="text-lg">When a Windows PC feels slow, I start by looking for unnecessary work the machine is doing before assuming the hardware needs to be replaced. Startup programs, browser extensions, storage pressure, heat, and background processes can make a usable computer feel much worse than it actually is.</p>
 
----
+      <h2 class="text-2xl font-bold mt-8 mb-3">1. Audit startup apps</h2>
+      <p>Open Task Manager and review the Startup Apps section. I disable nonessential launchers, chat clients, vendor utilities, and other programs that do not need to start with Windows. I leave security software, drivers, and anything the user actually depends on alone.</p>
 
+      <h2 class="text-2xl font-bold mt-8 mb-3">2. Find the real background load</h2>
+      <p>Task Manager and Microsoft Sysinternals tools such as Process Explorer and Autoruns can show what is consuming CPU, memory, disk activity, or startup time. The goal is not to disable random services; it is to identify software that is unnecessary, broken, or using far more resources than it should.</p>
 
-## 1. Disabling Startup Bloat
+      <h2 class="text-2xl font-bold mt-8 mb-3">3. Clean storage without installing another problem</h2>
+      <p>Windows Storage settings, Disk Cleanup where available, and open-source tools such as BleachBit can help clear temporary files. I avoid aggressive “registry cleaner,” automatic driver-updater, and one-click optimizer features because they can create more problems than they solve.</p>
 
-Most of the slowdown happens before you even open a program. Half the apps on a typical PC decide they *must* run at startup—messengers, updaters, “helper” apps that don’t really help.
+      <h2 class="text-2xl font-bold mt-8 mb-3">4. Check the browser</h2>
+      <p>A browser can become the biggest resource user on the computer. I review extensions, remove unwanted add-ons, check notification permissions, clear unnecessary cached data, and make sure the browser is current. I do not erase saved passwords or important session data without permission.</p>
 
-**My approach:**
+      <h2 class="text-2xl font-bold mt-8 mb-3">5. Check updates, thermals, and hardware limits</h2>
+      <p>Software cleanup will not fix a failing drive, overheating CPU, weak battery power profile, or a machine that simply does not have enough RAM for the workload. I check Windows Update, device drivers when relevant, free storage, temperatures, and hardware health before calling a tune-up complete.</p>
 
-* Hit **Ctrl + Shift + Esc** → Task Manager → *Startup* tab.
-* Disable anything non-essential: chat apps, game launchers, random vendor utilities.
-* Keep only what the client really needs (antivirus, drivers, core services).
+      <h2 class="text-2xl font-bold mt-8 mb-3">The main idea</h2>
+      <p>A good tune-up is not about installing a “speed booster.” It is about reducing unnecessary load, identifying actual bottlenecks, and making sure the hardware is healthy enough for what the owner expects it to do.</p>
 
-The boot time drops immediately. Clients think it’s magic—it’s really just cutting the clutter.
+      <div class="mt-8 rounded-lg border border-cyan-400/20 bg-cyan-950/20 p-4 text-sm text-gray-300">
+        <strong class="text-cyan-300">Note:</strong> Some performance problems are symptoms of failing storage, malware, overheating, or hardware damage. Back up important files before major repair or cleanup work whenever possible.
+      </div>
 
----
-
-## 2. Cleaning Up Background Services
-
-Windows loves hiding extra services. Manufacturers sneak in telemetry tools and “update managers” that run forever.
-
-**My approach:**
-
-* Run **msconfig** (System Configuration).
-* Check the *Services* tab, hide Microsoft services, and disable junk from vendors.
-* Use **Autoruns** (a lightweight Sysinternals utility) for deeper control.
-
-Less background noise = more free resources for the user’s actual work.
-
----
-
-## 3. Lightweight Utilities Over Heavy Suites
-
-A lot of people install massive “PC optimizer” software suites that promise speed but end up being heavier than the problem. I go the opposite route.
-
-**Tools I trust:**
-
-* **CCleaner Portable** (just for cache/junk cleanup, not the “driver updater” nonsense).
-* **BleachBit** for a free, open-source option.
-* **Process Explorer** (from Sysinternals) to hunt down resource hogs.
-
-Small, single-purpose tools beat bloated all-in-one packages every time.
-
----
-
-## 4. Browser & Cache Tune-Ups
-
-Browsers can get just as bloated as the system itself. Extensions, cached files, and forgotten toolbars add up.
-
-**My approach:**
-
-* Audit extensions—keep only what’s actively used.
-* Clear cache/cookies (without nuking passwords unless the client asks).
-* Make sure hardware acceleration is toggled on for modern systems.
-
-The difference is night and day for web browsing.
-
----
-
-## 5. Updating Without Overloading
-
-Updates are important, but vendor utilities love to sit in the background forever.
-
-**My approach:**
-
-* Run **Windows Update** manually, install what’s necessary.
-* Grab GPU and chipset drivers directly from NVIDIA/AMD/Intel or the motherboard vendor.
-* Remove redundant “updaters” once things are current.
-
-This way, the system stays updated without carrying extra baggage.
-
----
-
-## 6. Final Touches: Visual Tweaks
-
-When performance is more important than looks, I tune Windows for efficiency:
-
-* Right-click **This PC → Properties → Advanced System Settings → Performance Settings**.
-* Switch to *Adjust for best performance*, or manually disable animations.
-
-On older machines, this alone makes them feel years younger.
-
----
-
-## Why This Works
-
-PC tune-ups aren’t about magic “speed booster” software—they’re about removing friction. Every program that doesn’t need to be there gets out of the way, freeing up memory, CPU, and startup time. By keeping tools lightweight and targeted, I can transform a machine in under an hour without spending a dime.
-
----
-
-## Closing Note
-
-Every client PC is a little different, but the principles never change: less clutter, more focus, and lightweight utilities that do one thing well.
-
-If your computer feels slow, it’s probably not dying—it’s just buried under unnecessary weight. Trim the fat, and you’ll be surprised how fast it can still run.
-
----
-
-Would you like me to format this in **SEO blog style** (with meta description, headings optimized for keywords like “PC tune-up Seattle” and “remove startup bloat”), so you can drop it directly into your *djthepcdude.com* site?
-.</p>
-    </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/pages/blog.html" class="hero-cta">← Back to Blog</a>
+        <a href="/pages/services.html" class="hero-cta">PC Tune-Up Help</a>
+      </div>
+    </article>
   </main>
 
-  <footer class="bg-gray-900 text-gray-400 p-6 mt-12 text-center">
-    <p>&copy; 2025 DJ The PC Dude. All rights reserved.</p>
-  </footer>
-
+  <footer></footer>
   <script src="/assets/shared-layout.js" defer></script>
 </body>
 </html>

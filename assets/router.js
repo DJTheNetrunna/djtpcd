@@ -1,16 +1,16 @@
 (function () {
   const isFile = location.protocol === "file:";
+  const isGitHubPages = location.hostname.endsWith(".github.io");
 
   const BASE = (() => {
     if (isFile) return "";
 
-    const pathParts = location.pathname.split("/").filter(Boolean);
-
-    // GitHub Pages repo detection
-    if (pathParts.length > 0) {
-      return "/" + pathParts[0] + "/";
+    if (isGitHubPages) {
+      const pathParts = location.pathname.split("/").filter(Boolean);
+      if (pathParts.length > 0) return "/" + pathParts[0] + "/";
     }
 
+    // Custom domain (djthepcdude.com) serves the repository at site root.
     return "/";
   })();
 

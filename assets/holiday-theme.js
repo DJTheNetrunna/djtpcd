@@ -5,207 +5,212 @@
     newYear: {
       name: "New Year's Day",
       icon: "✦",
-      accent: "#ffd84d",
-      accentSoft: "#fff3ad",
-      accent2: "#a855ff",
-      bg1: "#100b20",
-      bg2: "#1b1231",
-      bg3: "#040208",
-      panel: "#2d2040",
-      panel2: "#171022",
-      text: "#fffcef",
-      muted: "#d4c8b1"
+      accent: "#FFE600",
+      accentSoft: "#FFF7A8",
+      accent2: "#7A00FF",
+      bg1: "#171400",
+      bg2: "#10051C",
+      bg3: "#040300",
+      panel: "#2D2908",
+      panel2: "#170B28",
+      text: "#FFFDF2",
+      muted: "#D1C99A"
     },
     mlk: {
       name: "Martin Luther King Jr. Day",
       icon: "✦",
-      accent: "#e8b84a",
-      accentSoft: "#ffe6a0",
-      accent2: "#4d7cff",
-      bg1: "#08101f",
-      bg2: "#101a31",
-      bg3: "#03060c",
-      panel: "#172541",
-      panel2: "#0c1425",
-      text: "#fffaf0",
-      muted: "#c6c0ad"
+      accent: "#FFD43B",
+      accentSoft: "#FFF0A3",
+      accent2: "#315CFF",
+      bg1: "#171000",
+      bg2: "#050B22",
+      bg3: "#040300",
+      panel: "#2C2208",
+      panel2: "#0C1537",
+      text: "#FFFDF4",
+      muted: "#D0C6A7"
     },
     presidents: {
       name: "Presidents Day",
       icon: "★",
-      accent: "#ff4d5f",
-      accentSoft: "#ffadb6",
-      accent2: "#4d8dff",
-      bg1: "#0a1125",
-      bg2: "#16162d",
-      bg3: "#03050c",
-      panel: "#202547",
-      panel2: "#10152b",
-      text: "#f8fbff",
-      muted: "#b8c3d8"
+      accent: "#FF1744",
+      accentSoft: "#FFB1BF",
+      accent2: "#00B8FF",
+      bg1: "#1A0208",
+      bg2: "#031527",
+      bg3: "#050103",
+      panel: "#301019",
+      panel2: "#092640",
+      text: "#FFF6F8",
+      muted: "#CFAAB2"
     },
     valentines: {
       name: "Valentine's Day",
       icon: "♥",
-      accent: "#ff3b9d",
-      accentSoft: "#ffafd6",
-      accent2: "#ff3955",
-      bg1: "#210713",
-      bg2: "#2b0a20",
-      bg3: "#090206",
-      panel: "#42132d",
-      panel2: "#250a19",
-      text: "#fff5fa",
-      muted: "#d8a9c0"
+      accent: "#FF00A8",
+      accentSoft: "#FFB2E2",
+      accent2: "#00FFD5",
+      bg1: "#1A0010",
+      bg2: "#001815",
+      bg3: "#050103",
+      panel: "#300A21",
+      panel2: "#082B26",
+      text: "#FFF5FB",
+      muted: "#D2ABC4"
     },
     easter: {
       name: "Easter",
       icon: "✿",
-      accent: "#8cf2ff",
-      accentSoft: "#dcfbff",
-      accent2: "#d597ff",
-      bg1: "#111025",
-      bg2: "#10262b",
-      bg3: "#05050c",
-      panel: "#222a42",
-      panel2: "#12172a",
-      text: "#fbfbff",
-      muted: "#c8c6dd"
+      accent: "#9B5CFF",
+      accentSoft: "#DCC4FF",
+      accent2: "#B7FF00",
+      bg1: "#11051D",
+      bg2: "#0C1600",
+      bg3: "#040206",
+      panel: "#25103A",
+      panel2: "#182806",
+      text: "#FCF8FF",
+      muted: "#C7B4D6"
     },
     memorial: {
       name: "Memorial Day",
       icon: "★",
-      accent: "#dce8ff",
-      accentSoft: "#ffffff",
-      accent2: "#356dff",
-      bg1: "#07101e",
-      bg2: "#10192a",
-      bg3: "#02050a",
-      panel: "#18263b",
-      panel2: "#0c1422",
-      text: "#f6f9ff",
-      muted: "#adb9cb"
+      accent: "#00A8FF",
+      accentSoft: "#B7E7FF",
+      accent2: "#FF2B4D",
+      bg1: "#031321",
+      bg2: "#1A0208",
+      bg3: "#010408",
+      panel: "#09263B",
+      panel2: "#301018",
+      text: "#F6FBFF",
+      muted: "#ADC2D0"
     },
     juneteenth: {
       name: "Juneteenth",
       icon: "★",
-      accent: "#ff4d55",
-      accentSoft: "#ffd4d6",
-      accent2: "#3f7dff",
-      bg1: "#0b1022",
-      bg2: "#20101a",
-      bg3: "#04050a",
-      panel: "#2b1a2b",
-      panel2: "#14101d",
-      text: "#fffafa",
-      muted: "#c7b8c1"
+      accent: "#FF1744",
+      accentSoft: "#FFD1D8",
+      accent2: "#246BFF",
+      bg1: "#1B0208",
+      bg2: "#031028",
+      bg3: "#050102",
+      panel: "#321019",
+      panel2: "#0A1D40",
+      text: "#FFF7F8",
+      muted: "#D0ADB4"
     },
     independence: {
       name: "Independence Day",
       icon: "★",
-      accent: "#ff4158",
-      accentSoft: "#ffffff",
-      accent2: "#3478ff",
-      bg1: "#07112a",
-      bg2: "#190b18",
-      bg3: "#02050d",
-      panel: "#182649",
-      panel2: "#100d22",
-      text: "#ffffff",
-      muted: "#b6c2db"
+      accent: "#FF1744",
+      accentSoft: "#FFFFFF",
+      accent2: "#246BFF",
+      bg1: "#1A0208",
+      bg2: "#03102B",
+      bg3: "#030106",
+      panel: "#321019",
+      panel2: "#0A1E45",
+      text: "#FFFFFF",
+      muted: "#C3CBE0"
     },
     labor: {
       name: "Labor Day",
       icon: "◆",
-      accent: "#4fa6ff",
-      accentSoft: "#c8e6ff",
-      accent2: "#ff5a5f",
-      bg1: "#071523",
-      bg2: "#101d2c",
-      bg3: "#02070c",
-      panel: "#173148",
-      panel2: "#0c1a29",
-      text: "#f5fbff",
-      muted: "#afc4d4"
+      accent: "#00A8FF",
+      accentSoft: "#B5E8FF",
+      accent2: "#FF6A00",
+      bg1: "#031523",
+      bg2: "#1A0901",
+      bg3: "#010508",
+      panel: "#0A2940",
+      panel2: "#311306",
+      text: "#F5FBFF",
+      muted: "#ACC4D1"
     },
     octoberFederal: {
       name: "Indigenous Peoples’ Day / Columbus Day",
       icon: "◆",
-      accent: "#ff9f32",
-      accentSoft: "#ffd8a5",
-      accent2: "#28d6bd",
-      bg1: "#171006",
-      bg2: "#10211d",
-      bg3: "#060402",
-      panel: "#302315",
-      panel2: "#182018",
-      text: "#fff9ef",
-      muted: "#cdbca4"
+      accent: "#FF7A00",
+      accentSoft: "#FFD0A0",
+      accent2: "#00E5D4",
+      bg1: "#1A0A01",
+      bg2: "#001916",
+      bg3: "#050301",
+      panel: "#321606",
+      panel2: "#082D29",
+      text: "#FFF9F2",
+      muted: "#D1B9A5"
     },
     halloween: {
       name: "Halloween",
       icon: "◆",
-      accent: "#ff7a00",
-      accentSoft: "#ffbf73",
-      accent2: "#a855ff",
-      bg1: "#15071c",
-      bg2: "#21100b",
-      bg3: "#050207",
-      panel: "#33142f",
-      panel2: "#1b0b1d",
-      text: "#fff5e9",
-      muted: "#cbb1c6"
+      accent: "#FF6A00",
+      accentSoft: "#FFC28F",
+      accent2: "#8A2EFF",
+      bg1: "#190901",
+      bg2: "#10031F",
+      bg3: "#050201",
+      panel: "#311306",
+      panel2: "#25103B",
+      text: "#FFF7EF",
+      muted: "#CEB1A0"
     },
     veterans: {
       name: "Veterans Day",
       icon: "★",
-      accent: "#e7c55d",
-      accentSoft: "#fff0b0",
-      accent2: "#416dff",
-      bg1: "#071020",
-      bg2: "#11192b",
-      bg3: "#02050b",
-      panel: "#18283e",
-      panel2: "#0c1523",
-      text: "#fafcff",
-      muted: "#b7c0cf"
+      accent: "#FFE600",
+      accentSoft: "#FFF6A0",
+      accent2: "#315CFF",
+      bg1: "#171400",
+      bg2: "#050B22",
+      bg3: "#040300",
+      panel: "#2C2808",
+      panel2: "#0C1537",
+      text: "#FFFDF2",
+      muted: "#CDC69B"
     },
     thanksgiving: {
       name: "Thanksgiving",
       icon: "◆",
-      accent: "#ff9d2e",
-      accentSoft: "#ffd59b",
-      accent2: "#c84f28",
-      bg1: "#1b0e05",
-      bg2: "#281407",
-      bg3: "#080401",
-      panel: "#3a2110",
-      panel2: "#211109",
-      text: "#fff8ee",
-      muted: "#d2b79f"
+      accent: "#FF7A00",
+      accentSoft: "#FFD0A2",
+      accent2: "#00D7C8",
+      bg1: "#1A0A01",
+      bg2: "#001713",
+      bg3: "#050301",
+      panel: "#321606",
+      panel2: "#082A26",
+      text: "#FFF8F0",
+      muted: "#D0B8A5"
     },
     christmas: {
       name: "Christmas",
       icon: "✦",
-      accent: "#19e67d",
-      accentSoft: "#b4ffd6",
-      accent2: "#ff4058",
-      bg1: "#06180f",
-      bg2: "#1f0a10",
-      bg3: "#020704",
-      panel: "#123522",
-      panel2: "#190c10",
-      text: "#f5fff9",
-      muted: "#b1cbbd"
+      accent: "#00FF73",
+      accentSoft: "#B5FFD2",
+      accent2: "#FF1744",
+      bg1: "#00170A",
+      bg2: "#1A0208",
+      bg3: "#000502",
+      panel: "#082A16",
+      panel2: "#301018",
+      text: "#F3FFF8",
+      muted: "#A9C8B5"
     }
   };
+
+  let activeHoliday = null;
+  let lastHolidayName = "";
 
   function dateOnly(date) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate());
   }
 
   function sameDay(a, b) {
-    return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    return a.getFullYear() === b.getFullYear() &&
+      a.getMonth() === b.getMonth() &&
+      a.getDate() === b.getDate();
   }
 
   function nthWeekday(year, month, weekday, nth) {
@@ -229,8 +234,7 @@
   }
 
   function matchesFixedOrObserved(today, month, day) {
-    const candidates = [today.getFullYear() - 1, today.getFullYear(), today.getFullYear() + 1];
-    return candidates.some((year) => {
+    return [today.getFullYear() - 1, today.getFullYear(), today.getFullYear() + 1].some((year) => {
       const { actual, observed } = observedFixedHoliday(year, month, day);
       return sameDay(today, actual) || sameDay(today, observed);
     });
@@ -275,8 +279,39 @@
     return null;
   }
 
+  function removeBadge() {
+    document.getElementById("djpcd-holiday-badge")?.remove();
+  }
+
+  function installBadge(theme) {
+    const statusShell = document.querySelector(".shared-status .shared-shell");
+    if (!statusShell || !theme) return;
+
+    let badge = document.getElementById("djpcd-holiday-badge");
+    if (!badge) {
+      badge = document.createElement("span");
+      badge.id = "djpcd-holiday-badge";
+      badge.style.cssText = [
+        "font-weight:900",
+        "color:var(--theme-accent-soft)",
+        "border:1px solid color-mix(in srgb,var(--theme-accent) 68%,transparent)",
+        "border-radius:999px",
+        "padding:3px 8px",
+        "white-space:nowrap",
+        "text-shadow:0 0 8px color-mix(in srgb,var(--theme-accent) 65%,transparent)",
+        "box-shadow:0 0 12px color-mix(in srgb,var(--theme-accent) 28%,transparent),0 0 18px color-mix(in srgb,var(--theme-accent-2) 18%,transparent)"
+      ].join(";");
+      const control = document.getElementById("djpcd-theme-control");
+      statusShell.insertBefore(badge, control || null);
+    }
+    badge.textContent = `${theme.icon} ${theme.name}`;
+  }
+
   function applyHoliday(theme) {
     if (!theme) return false;
+
+    activeHoliday = theme;
+    lastHolidayName = theme.name;
     const root = document.documentElement;
     root.dataset.holidayTheme = theme.name;
     root.style.setProperty("--theme-accent", theme.accent);
@@ -292,45 +327,59 @@
 
     const control = document.getElementById("djpcd-theme-control");
     if (control) {
-      control.textContent = `${theme.icon} ${theme.name.toUpperCase()}`;
-      control.title = `${theme.name} holiday theme is active today`;
-      control.setAttribute("aria-label", `${theme.name} holiday color theme is active today`);
+      control.textContent = `${theme.icon} ${theme.name.toUpperCase()} • CYBER HOLIDAY`;
+      control.title = `${theme.name} neon holiday theme is active today`;
+      control.setAttribute("aria-label", `${theme.name} neon holiday color theme is active today`);
     }
 
-    const statusShell = document.querySelector(".shared-status .shared-shell");
-    if (statusShell && !document.getElementById("djpcd-holiday-badge")) {
-      const badge = document.createElement("span");
-      badge.id = "djpcd-holiday-badge";
-      badge.textContent = `${theme.icon} ${theme.name}`;
-      badge.style.cssText = "font-weight:800;color:var(--theme-accent-soft);border:1px solid color-mix(in srgb,var(--theme-accent) 38%,transparent);border-radius:999px;padding:2px 7px;white-space:nowrap";
-      statusShell.insertBefore(badge, control || null);
-    }
-
+    installBadge(theme);
     return true;
+  }
+
+  function restoreRegularTheme() {
+    delete document.documentElement.dataset.holidayTheme;
+    activeHoliday = null;
+    lastHolidayName = "";
+    removeBadge();
+
+    if (window.DJThemeEngine?.current) {
+      const current = window.DJThemeEngine.current();
+      if (Number.isInteger(current.index)) window.DJThemeEngine.set(current.index);
+    }
   }
 
   function enforce() {
     const holiday = holidayForDate(new Date());
-    if (!holiday) return false;
-    applyHoliday(holiday);
-    return true;
-  }
 
-  function watchUi() {
-    enforce();
-    const observer = new MutationObserver(() => enforce());
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    document.addEventListener("djpcd:themechange", () => queueMicrotask(enforce));
-  }
-
-  const holiday = holidayForDate(new Date());
-  if (holiday) {
-    applyHoliday(holiday);
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", watchUi, { once: true });
-    } else {
-      watchUi();
+    if (holiday) {
+      applyHoliday(holiday);
+      return true;
     }
+
+    if (activeHoliday || lastHolidayName) restoreRegularTheme();
+    return false;
+  }
+
+  function start() {
+    enforce();
+
+    document.addEventListener("djpcd:themechange", () => {
+      const holiday = holidayForDate(new Date());
+      if (holiday) queueMicrotask(() => applyHoliday(holiday));
+    });
+
+    const uiTimer = setInterval(() => {
+      if (activeHoliday) installBadge(activeHoliday);
+      if (activeHoliday && document.getElementById("djpcd-theme-control")) clearInterval(uiTimer);
+    }, 250);
+
+    setInterval(enforce, 60000);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start, { once: true });
+  } else {
+    start();
   }
 
   window.DJHolidayTheme = {

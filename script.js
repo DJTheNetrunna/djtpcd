@@ -156,6 +156,67 @@
     }, 5000);
   }
 
+  async function updateLatestBlogAnnouncement() {
+    const announcement = document.getElementById("latest-blog-announcement");
+    const link = document.getElementById("latest-blog-link");
+    const title = document.getElementById("latest-blog-title");
+    const meta = document.getElementById("latest-blog-meta");
+    const summary = document.getElementById("latest-blog-summary");
+
+    if (!announcement || !link || !title || !meta || !summary) return;
+
+    try {
+      const response = await fetch("/pages/blog.html", { cache: "no-store" });
+      if (!response.ok) throw new Error(`Blog request failed: ${response.status}`);
+
+      const html = await response.text();
+      const blogDocument = new DOMParser().parseFromString(html, "text/html");
+      const newestPost = blogDocument.querySelector("main article");
+
+      if (!newestPost) throw new Error("No blog articles found");
+
+      const postLink = newestPost.querySelector("h1 a, h2 a, h3 a, a[href*='assets/posts']");
+      if (!postLink) throw new Error("Newest blog article has no post link");
+
+      const rawHref = postLink.getAttribute("href");
+      const postTitle = postLink.textContent.trim();
+      const paragraphs = Array.from(newestPost.querySelectorAll("p"));
+
+      const dateParagraph = paragraphs.find((p) => /^Posted\b/i.test(p.textContent.trim()));
+      const categoryParagraph = paragraphs.find((p) => {
+        const text = p.textContent.trim();
+        return text && !/^Posted\b/i.test(text) && text.length < 80;
+      });
+      const summaryParagraph = paragraphs.find((p) => {
+        const text = p.textContent.trim();
+        return text.length >= 40 && !/^Posted\b/i.test(text);
+      });
+
+      const blogPageUrl = new URL("/pages/blog.html", window.location.origin);
+      const resolvedPostUrl = new URL(rawHref, blogPageUrl);
+
+      const category = categoryParagraph
+        ? categoryParagraph.textContent.trim().replace(/\s*•\s*New\s*$/i, "")
+        : "Latest Post";
+
+      const date = dateParagraph
+        ? dateParagraph.textContent.trim().replace(/^Posted(?:\s+on)?\s*/i, "")
+        : "";
+
+      link.href = resolvedPostUrl.href;
+      title.textContent = postTitle;
+      meta.textContent = date ? `${category} • ${date}` : category;
+
+      if (summaryParagraph) {
+        summary.textContent = summaryParagraph.textContent.trim();
+      }
+
+      announcement.dataset.latestBlogLoaded = "true";
+    } catch (error) {
+      console.warn("Latest blog announcement is using its built-in fallback.", error);
+    }
+  }
+
   function initFadeIn() {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -176,6 +237,7 @@
     renderFooter();
     renderMobileCTA();
     initPromos();
+    updateLatestBlogAnnouncement();
     initFadeIn();
   });
 })();

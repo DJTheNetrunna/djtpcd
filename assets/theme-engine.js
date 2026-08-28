@@ -3,148 +3,148 @@
 
   const THEMES = [
     {
-      id: "cyber-cyan",
-      name: "Cyber Cyan",
-      accent: "#20f4ff",
-      accentSoft: "#9afaff",
-      accent2: "#3478ff",
-      bg1: "#04121a",
-      bg2: "#071827",
-      bg3: "#02060b",
-      panel: "#0c2633",
-      panel2: "#07151f",
-      text: "#f2fdff",
-      muted: "#9cc3cc"
+      id: "cyber-cyan-orange",
+      name: "Cyber Cyan / Orange",
+      accent: "#00F5FF",
+      accentSoft: "#B8FCFF",
+      accent2: "#FF5A1F",
+      bg1: "#031419",
+      bg2: "#140A07",
+      bg3: "#010407",
+      panel: "#09232A",
+      panel2: "#140E11",
+      text: "#F5FEFF",
+      muted: "#A9C5C9"
     },
     {
-      id: "neon-magenta",
-      name: "Neon Magenta",
-      accent: "#ff2bd6",
-      accentSoft: "#ff9bea",
-      accent2: "#8b5cff",
-      bg1: "#1b0619",
-      bg2: "#21092d",
-      bg3: "#08030d",
-      panel: "#32102f",
-      panel2: "#19091e",
-      text: "#fff5fd",
-      muted: "#d7a9ca"
+      id: "neon-magenta-lime",
+      name: "Neon Magenta / Lime",
+      accent: "#FF00CC",
+      accentSoft: "#FFB5EF",
+      accent2: "#A6FF00",
+      bg1: "#190313",
+      bg2: "#101900",
+      bg3: "#050106",
+      panel: "#2B0A24",
+      panel2: "#111A08",
+      text: "#FFF7FD",
+      muted: "#D4AFCB"
     },
     {
-      id: "electric-lime",
-      name: "Electric Lime",
-      accent: "#b6ff22",
-      accentSoft: "#e1ff99",
-      accent2: "#22ffd3",
-      bg1: "#07170b",
-      bg2: "#10230d",
-      bg3: "#020805",
-      panel: "#17351b",
-      panel2: "#0b1d10",
-      text: "#f8fff1",
-      muted: "#b8cda9"
+      id: "electric-lime-violet",
+      name: "Electric Lime / Violet",
+      accent: "#B7FF00",
+      accentSoft: "#E9FFA6",
+      accent2: "#7A00FF",
+      bg1: "#0B1600",
+      bg2: "#10051C",
+      bg3: "#020400",
+      panel: "#172907",
+      panel2: "#150A25",
+      text: "#FBFFF0",
+      muted: "#BCCAA8"
     },
     {
-      id: "solar-flare",
-      name: "Solar Flare",
-      accent: "#ff7a18",
-      accentSoft: "#ffd08a",
-      accent2: "#ff3158",
-      bg1: "#1d0b04",
-      bg2: "#2a1008",
-      bg3: "#090301",
-      panel: "#3a190d",
-      panel2: "#211008",
-      text: "#fff8ef",
-      muted: "#d8b29b"
+      id: "solar-blue",
+      name: "Solar Orange / Blue",
+      accent: "#FF6A00",
+      accentSoft: "#FFD1A8",
+      accent2: "#00A8FF",
+      bg1: "#1A0A02",
+      bg2: "#031322",
+      bg3: "#060201",
+      panel: "#321506",
+      panel2: "#081C2D",
+      text: "#FFF9F3",
+      muted: "#D2B7A6"
     },
     {
-      id: "ultraviolet",
-      name: "Ultraviolet",
-      accent: "#a855ff",
-      accentSoft: "#d9adff",
-      accent2: "#5d7cff",
-      bg1: "#10051f",
-      bg2: "#170a2c",
-      bg3: "#05020b",
-      panel: "#25103f",
-      panel2: "#130824",
-      text: "#fbf5ff",
-      muted: "#c5add8"
+      id: "ultraviolet-yellow",
+      name: "Ultraviolet / Yellow",
+      accent: "#8A2EFF",
+      accentSoft: "#D8B5FF",
+      accent2: "#FFF000",
+      bg1: "#10031F",
+      bg2: "#191600",
+      bg3: "#040107",
+      panel: "#24103B",
+      panel2: "#211F08",
+      text: "#FCF7FF",
+      muted: "#C5AFD5"
     },
     {
-      id: "miami-vice",
-      name: "Miami Vice",
-      accent: "#00f5d4",
-      accentSoft: "#8dfff0",
-      accent2: "#ff4ecd",
-      bg1: "#03171c",
-      bg2: "#12112d",
-      bg3: "#02070b",
-      panel: "#0a2b33",
-      panel2: "#10162a",
-      text: "#f3fffd",
-      muted: "#a7c8ca"
+      id: "miami-grid",
+      name: "Miami Grid",
+      accent: "#00FFD5",
+      accentSoft: "#A8FFF0",
+      accent2: "#FF2EA6",
+      bg1: "#001817",
+      bg2: "#1B0313",
+      bg3: "#010606",
+      panel: "#082A28",
+      panel2: "#2A0A1D",
+      text: "#F3FFFC",
+      muted: "#A8CBC6"
     },
     {
-      id: "acid-gold",
-      name: "Acid Gold",
-      accent: "#ffe600",
-      accentSoft: "#fff49a",
-      accent2: "#ff8a00",
-      bg1: "#191604",
-      bg2: "#221c05",
-      bg3: "#080701",
-      panel: "#332b08",
-      panel2: "#1b1705",
-      text: "#fffdeb",
-      muted: "#d4c991"
+      id: "toxic-gold-cobalt",
+      name: "Toxic Gold / Cobalt",
+      accent: "#FFE600",
+      accentSoft: "#FFF6A0",
+      accent2: "#2E5BFF",
+      bg1: "#171400",
+      bg2: "#050B1E",
+      bg3: "#050400",
+      panel: "#2D2908",
+      panel2: "#0C1533",
+      text: "#FFFEF2",
+      muted: "#D0C994"
     },
     {
-      id: "plasma-red",
-      name: "Plasma Red",
-      accent: "#ff3b57",
-      accentSoft: "#ff9cab",
-      accent2: "#ff6b00",
-      bg1: "#1b0509",
-      bg2: "#26070c",
-      bg3: "#080203",
-      panel: "#351017",
-      panel2: "#1c080c",
-      text: "#fff4f6",
-      muted: "#d5a5ab"
+      id: "plasma-red-cyan",
+      name: "Plasma Red / Cyan",
+      accent: "#FF1744",
+      accentSoft: "#FFB2C0",
+      accent2: "#00E5FF",
+      bg1: "#1B0209",
+      bg2: "#00171A",
+      bg3: "#060102",
+      panel: "#32101A",
+      panel2: "#08272C",
+      text: "#FFF5F7",
+      muted: "#D0AAB2"
     },
     {
-      id: "arctic-blue",
-      name: "Arctic Blue",
-      accent: "#55b8ff",
-      accentSoft: "#b7e4ff",
-      accent2: "#6d5cff",
-      bg1: "#061326",
-      bg2: "#0a1c36",
-      bg3: "#020711",
-      panel: "#102b4b",
-      panel2: "#09182c",
-      text: "#f4faff",
-      muted: "#aac1d6"
+      id: "arctic-blue-orange",
+      name: "Arctic Blue / Orange",
+      accent: "#00A3FF",
+      accentSoft: "#B2E4FF",
+      accent2: "#FF6B00",
+      bg1: "#03111E",
+      bg2: "#1B0901",
+      bg3: "#01050A",
+      panel: "#09263B",
+      panel2: "#301307",
+      text: "#F5FBFF",
+      muted: "#ACC3D2"
     },
     {
-      id: "emerald-pulse",
-      name: "Emerald Pulse",
-      accent: "#13f287",
-      accentSoft: "#93ffc5",
-      accent2: "#00c8ff",
-      bg1: "#03180f",
-      bg2: "#06261a",
-      bg3: "#010905",
-      panel: "#0b3524",
-      panel2: "#071d15",
-      text: "#f1fff8",
-      muted: "#a2cab4"
+      id: "matrix-green-magenta",
+      name: "Matrix Green / Magenta",
+      accent: "#00FF85",
+      accentSoft: "#A8FFD2",
+      accent2: "#FF00A8",
+      bg1: "#00170B",
+      bg2: "#18000F",
+      bg3: "#000502",
+      panel: "#082A17",
+      panel2: "#28091B",
+      text: "#F2FFF8",
+      muted: "#A4C8B5"
     }
   ];
 
-  const STORAGE_KEY = "djpcd-theme-state-v1";
+  const STORAGE_KEY = "djpcd-theme-state-v2";
   const AUTO_CHANGE_MS = 45000;
   let timer = null;
   let activeIndex = 0;
@@ -183,16 +183,16 @@
     style.id = "djpcd-theme-engine-styles";
     style.textContent = `
       :root {
-        --theme-accent: #20f4ff;
-        --theme-accent-soft: #9afaff;
-        --theme-accent-2: #3478ff;
-        --theme-bg-1: #04121a;
-        --theme-bg-2: #071827;
-        --theme-bg-3: #02060b;
-        --theme-panel: #0c2633;
-        --theme-panel-2: #07151f;
-        --theme-text: #f2fdff;
-        --theme-muted: #9cc3cc;
+        --theme-accent: #00F5FF;
+        --theme-accent-soft: #B8FCFF;
+        --theme-accent-2: #FF5A1F;
+        --theme-bg-1: #031419;
+        --theme-bg-2: #140A07;
+        --theme-bg-3: #010407;
+        --theme-panel: #09232A;
+        --theme-panel-2: #140E11;
+        --theme-text: #F5FEFF;
+        --theme-muted: #A9C5C9;
       }
 
       html {
@@ -202,17 +202,49 @@
       body {
         color: var(--theme-text) !important;
         background:
-          radial-gradient(circle at 10% -5%, color-mix(in srgb, var(--theme-accent-2) 30%, transparent), transparent 30rem),
-          radial-gradient(circle at 88% 4%, color-mix(in srgb, var(--theme-accent) 24%, transparent), transparent 28rem),
-          radial-gradient(circle at 55% 115%, color-mix(in srgb, var(--theme-accent-2) 16%, transparent), transparent 38rem),
-          linear-gradient(145deg, var(--theme-bg-2) 0%, var(--theme-bg-1) 46%, var(--theme-bg-3) 100%) !important;
-        transition: background 1.1s ease, color .8s ease;
+          radial-gradient(circle at 9% -8%, color-mix(in srgb, var(--theme-accent) 34%, transparent), transparent 29rem),
+          radial-gradient(circle at 91% 4%, color-mix(in srgb, var(--theme-accent-2) 30%, transparent), transparent 28rem),
+          radial-gradient(circle at 48% 115%, color-mix(in srgb, var(--theme-accent) 17%, transparent), transparent 42rem),
+          linear-gradient(145deg, var(--theme-bg-2) 0%, var(--theme-bg-1) 44%, var(--theme-bg-3) 100%) !important;
+        transition: background 1s ease, color .7s ease;
       }
 
       body::before {
+        opacity: .26 !important;
         background-image:
-          linear-gradient(color-mix(in srgb, var(--theme-accent) 9%, transparent) 1px, transparent 1px),
-          linear-gradient(90deg, color-mix(in srgb, var(--theme-accent) 7%, transparent) 1px, transparent 1px) !important;
+          linear-gradient(color-mix(in srgb, var(--theme-accent) 13%, transparent) 1px, transparent 1px),
+          linear-gradient(90deg, color-mix(in srgb, var(--theme-accent-2) 11%, transparent) 1px, transparent 1px) !important;
+        background-size: 38px 38px !important;
+        filter: drop-shadow(0 0 4px color-mix(in srgb, var(--theme-accent) 20%, transparent));
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        pointer-events: none;
+        opacity: .12;
+        background:
+          repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 3px,
+            color-mix(in srgb, var(--theme-accent) 18%, transparent) 4px
+          ),
+          linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--theme-accent) 5%, transparent),
+            transparent 35%,
+            color-mix(in srgb, var(--theme-accent-2) 5%, transparent)
+          );
+        mix-blend-mode: screen;
+        animation: djpcd-scan 8s linear infinite;
+      }
+
+      @keyframes djpcd-scan {
+        from { transform: translateY(-4px); }
+        to { transform: translateY(4px); }
       }
 
       :root {
@@ -225,33 +257,54 @@
         --blue: var(--theme-accent-2) !important;
         --text: var(--theme-text) !important;
         --muted: var(--theme-muted) !important;
-        --line: color-mix(in srgb, var(--theme-accent) 24%, transparent) !important;
+        --line: color-mix(in srgb, var(--theme-accent) 30%, transparent) !important;
       }
 
       .shared-status,
       header,
       footer,
       .shared-mobile-cta {
-        border-color: color-mix(in srgb, var(--theme-accent) 24%, transparent) !important;
-        background: color-mix(in srgb, var(--theme-bg-3) 90%, transparent) !important;
-        transition: background .9s ease, border-color .9s ease, box-shadow .9s ease;
+        border-color: color-mix(in srgb, var(--theme-accent) 34%, transparent) !important;
+        background: color-mix(in srgb, var(--theme-bg-3) 87%, transparent) !important;
+        transition: background .8s ease, border-color .8s ease, box-shadow .8s ease;
+      }
+
+      .shared-status {
+        box-shadow:
+          inset 0 -1px 0 color-mix(in srgb, var(--theme-accent-2) 25%, transparent),
+          0 0 22px color-mix(in srgb, var(--theme-accent) 10%, transparent);
       }
 
       header {
-        box-shadow: 0 8px 34px color-mix(in srgb, var(--theme-accent) 10%, transparent) !important;
+        box-shadow:
+          0 10px 38px rgba(0,0,0,.34),
+          0 0 26px color-mix(in srgb, var(--theme-accent) 12%, transparent),
+          inset 0 -1px 0 color-mix(in srgb, var(--theme-accent-2) 26%, transparent) !important;
       }
 
       .status-dot {
         background: var(--theme-accent) !important;
-        box-shadow: 0 0 14px var(--theme-accent), 0 0 28px color-mix(in srgb, var(--theme-accent) 50%, transparent) !important;
+        box-shadow:
+          0 0 8px var(--theme-accent),
+          0 0 20px var(--theme-accent),
+          0 0 34px color-mix(in srgb, var(--theme-accent-2) 72%, transparent) !important;
       }
 
       .brand-logo,
       .hero-logo {
         filter:
-          drop-shadow(0 0 14px color-mix(in srgb, var(--theme-accent) 40%, transparent))
-          drop-shadow(0 18px 34px rgba(0,0,0,.35)) !important;
-        transition: filter .9s ease, transform .2s ease;
+          drop-shadow(-5px 0 12px color-mix(in srgb, var(--theme-accent) 48%, transparent))
+          drop-shadow(5px 0 12px color-mix(in srgb, var(--theme-accent-2) 42%, transparent))
+          drop-shadow(0 18px 34px rgba(0,0,0,.38)) !important;
+        transition: filter .8s ease, transform .2s ease;
+      }
+
+      h1,
+      h2,
+      .brand-name {
+        text-shadow:
+          0 0 12px color-mix(in srgb, var(--theme-accent) 14%, transparent),
+          0 0 20px color-mix(in srgb, var(--theme-accent-2) 8%, transparent);
       }
 
       .brand-subtitle,
@@ -265,6 +318,7 @@
       .utility-link:hover,
       main a:not(.academy-link) {
         color: var(--theme-accent-soft) !important;
+        text-shadow: 0 0 10px color-mix(in srgb, var(--theme-accent) 38%, transparent);
       }
 
       .card,
@@ -272,24 +326,30 @@
       .grid > article,
       article,
       aside > a {
-        border-color: color-mix(in srgb, var(--theme-accent) 24%, transparent) !important;
-        background: linear-gradient(145deg,
-          color-mix(in srgb, var(--theme-panel) 94%, transparent),
-          color-mix(in srgb, var(--theme-panel-2) 96%, transparent)) !important;
+        border-color: color-mix(in srgb, var(--theme-accent) 34%, transparent) !important;
+        background:
+          linear-gradient(145deg,
+            color-mix(in srgb, var(--theme-panel) 94%, transparent),
+            color-mix(in srgb, var(--theme-panel-2) 95%, transparent)) !important;
         box-shadow:
-          0 18px 55px rgba(0,0,0,.34),
-          0 0 28px color-mix(in srgb, var(--theme-accent) 6%, transparent) !important;
-        transition: background .9s ease, border-color .9s ease, box-shadow .9s ease, transform .16s ease;
+          0 18px 55px rgba(0,0,0,.4),
+          -5px 0 18px color-mix(in srgb, var(--theme-accent) 8%, transparent),
+          5px 0 18px color-mix(in srgb, var(--theme-accent-2) 8%, transparent),
+          inset 0 1px 0 color-mix(in srgb, var(--theme-accent-soft) 11%, transparent) !important;
+        transition: background .8s ease, border-color .8s ease, box-shadow .8s ease, transform .16s ease;
       }
 
       .card:hover,
       .grid > div:hover,
       .grid > article:hover,
-      article:hover {
-        border-color: color-mix(in srgb, var(--theme-accent) 58%, transparent) !important;
+      article:hover,
+      aside > a:hover {
+        border-color: color-mix(in srgb, var(--theme-accent) 72%, transparent) !important;
         box-shadow:
-          0 22px 60px rgba(0,0,0,.44),
-          0 0 36px color-mix(in srgb, var(--theme-accent) 18%, transparent) !important;
+          0 22px 65px rgba(0,0,0,.46),
+          -8px 0 30px color-mix(in srgb, var(--theme-accent) 20%, transparent),
+          8px 0 30px color-mix(in srgb, var(--theme-accent-2) 18%, transparent),
+          inset 0 0 22px color-mix(in srgb, var(--theme-accent) 5%, transparent) !important;
       }
 
       .hero-cta,
@@ -300,30 +360,51 @@
       textarea,
       select,
       [class*="border-cyan-"] {
-        border-color: color-mix(in srgb, var(--theme-accent) 42%, transparent) !important;
+        border-color: color-mix(in srgb, var(--theme-accent) 52%, transparent) !important;
       }
 
       .hero-cta,
       .nav-link:hover,
       .utility-link:hover,
       [class*="bg-cyan-"] {
-        background: color-mix(in srgb, var(--theme-accent) 10%, var(--theme-panel-2)) !important;
+        background:
+          linear-gradient(110deg,
+            color-mix(in srgb, var(--theme-accent) 13%, var(--theme-panel-2)),
+            color-mix(in srgb, var(--theme-accent-2) 9%, var(--theme-panel-2))) !important;
+      }
+
+      .nav-link.is-active,
+      .nav-link[aria-current="page"] {
+        box-shadow:
+          inset 0 0 0 1px color-mix(in srgb, var(--theme-accent) 36%, transparent),
+          0 0 15px color-mix(in srgb, var(--theme-accent) 14%, transparent),
+          0 0 22px color-mix(in srgb, var(--theme-accent-2) 8%, transparent) !important;
       }
 
       .hero-cta:hover,
       button,
       [type="submit"],
       .btn {
-        background: linear-gradient(120deg, var(--theme-accent-2), var(--theme-accent)) !important;
-        color: #02060a !important;
-        border-color: color-mix(in srgb, var(--theme-accent-soft) 62%, transparent) !important;
-        box-shadow: 0 10px 30px color-mix(in srgb, var(--theme-accent) 18%, transparent) !important;
+        background:
+          linear-gradient(105deg,
+            var(--theme-accent) 0%,
+            color-mix(in srgb, var(--theme-accent) 55%, var(--theme-accent-2)) 48%,
+            var(--theme-accent-2) 100%) !important;
+        color: #020408 !important;
+        border-color: color-mix(in srgb, var(--theme-accent-soft) 80%, transparent) !important;
+        box-shadow:
+          0 0 15px color-mix(in srgb, var(--theme-accent) 50%, transparent),
+          0 0 30px color-mix(in srgb, var(--theme-accent-2) 30%, transparent),
+          0 10px 32px rgba(0,0,0,.32) !important;
       }
 
       input,
       textarea,
       select {
-        background: color-mix(in srgb, var(--theme-bg-3) 82%, var(--theme-panel)) !important;
+        background:
+          linear-gradient(120deg,
+            color-mix(in srgb, var(--theme-bg-3) 88%, var(--theme-panel)),
+            color-mix(in srgb, var(--theme-bg-3) 90%, var(--theme-panel-2))) !important;
         color: var(--theme-text) !important;
       }
 
@@ -331,40 +412,57 @@
       textarea:focus,
       select:focus {
         border-color: var(--theme-accent) !important;
-        box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-accent) 16%, transparent) !important;
+        box-shadow:
+          0 0 0 2px color-mix(in srgb, var(--theme-accent) 28%, transparent),
+          0 0 18px color-mix(in srgb, var(--theme-accent-2) 18%, transparent) !important;
       }
 
       blockquote {
-        border-color: color-mix(in srgb, var(--theme-accent) 58%, transparent) !important;
+        border-color: var(--theme-accent-2) !important;
+        box-shadow: -8px 0 18px color-mix(in srgb, var(--theme-accent-2) 12%, transparent);
       }
 
       [class*="shadow-cyan-"] {
-        --tw-shadow-color: color-mix(in srgb, var(--theme-accent) 18%, transparent) !important;
+        --tw-shadow-color: color-mix(in srgb, var(--theme-accent) 24%, transparent) !important;
       }
 
       .academy-link {
-        background: linear-gradient(115deg, var(--theme-accent-2), var(--theme-accent-soft) 52%, var(--theme-accent)) !important;
-        color: #02060a !important;
-        box-shadow: 0 8px 24px color-mix(in srgb, var(--theme-accent) 20%, transparent) !important;
+        background:
+          linear-gradient(110deg,
+            var(--theme-accent-2),
+            var(--theme-accent-soft) 48%,
+            var(--theme-accent)) !important;
+        color: #020408 !important;
+        box-shadow:
+          0 0 18px color-mix(in srgb, var(--theme-accent) 28%, transparent),
+          0 0 28px color-mix(in srgb, var(--theme-accent-2) 18%, transparent) !important;
       }
 
       #djpcd-theme-control {
         margin-left: auto;
-        border: 1px solid color-mix(in srgb, var(--theme-accent) 42%, transparent);
+        border: 1px solid color-mix(in srgb, var(--theme-accent) 68%, transparent);
         border-radius: 999px;
-        padding: 4px 9px;
-        background: color-mix(in srgb, var(--theme-accent) 9%, var(--theme-bg-3)) !important;
+        padding: 5px 10px;
+        background:
+          linear-gradient(105deg,
+            color-mix(in srgb, var(--theme-accent) 14%, var(--theme-bg-3)),
+            color-mix(in srgb, var(--theme-accent-2) 12%, var(--theme-bg-3))) !important;
         color: var(--theme-accent-soft) !important;
-        font: 700 10px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        letter-spacing: .07em;
+        font: 800 10px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        letter-spacing: .075em;
         cursor: pointer;
         white-space: nowrap;
-        box-shadow: 0 0 16px color-mix(in srgb, var(--theme-accent) 8%, transparent);
+        text-shadow: 0 0 8px color-mix(in srgb, var(--theme-accent) 55%, transparent);
+        box-shadow:
+          0 0 13px color-mix(in srgb, var(--theme-accent) 22%, transparent),
+          0 0 19px color-mix(in srgb, var(--theme-accent-2) 12%, transparent);
       }
 
       #djpcd-theme-control:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 0 20px color-mix(in srgb, var(--theme-accent) 20%, transparent);
+        transform: translateY(-1px) scale(1.02);
+        box-shadow:
+          0 0 20px color-mix(in srgb, var(--theme-accent) 42%, transparent),
+          0 0 30px color-mix(in srgb, var(--theme-accent-2) 24%, transparent);
       }
 
       @media (max-width: 640px) {
@@ -377,6 +475,7 @@
 
       @media (prefers-reduced-motion: reduce) {
         body,
+        body::after,
         header,
         footer,
         .card,
@@ -386,6 +485,7 @@
         .brand-logo,
         .hero-logo {
           transition-duration: .01ms !important;
+          animation: none !important;
         }
       }
     `;
@@ -414,7 +514,7 @@
     if (control) {
       control.textContent = `THEME: ${theme.name.toUpperCase()} ↻`;
       control.setAttribute("aria-label", `Current color theme ${theme.name}. Click for another theme.`);
-      control.title = "Click for another random theme";
+      control.title = "Click for another random cyber theme";
     }
 
     document.dispatchEvent(new CustomEvent("djpcd:themechange", { detail: { ...theme, index } }));

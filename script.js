@@ -18,40 +18,38 @@
 
   function to(path) {
     if (!path) return BASE;
-    if (/^(?:[a-z]+:)?\/\//i.test(path) || /^(?:mailto|tel|sms):/i.test(path) || path.startsWith("#")) {
-      return path;
-    }
+    if (/^(?:[a-z]+:)?\/\//i.test(path) || /^(?:mailto|tel|sms):/i.test(path) || path.startsWith("#")) return path;
     return BASE + path.replace(/^\/+/, "");
   }
 
-  function loadHolidayTheme() {
-    if (window.DJHolidayTheme || document.querySelector("script[data-djpcd-holiday-theme]")) return;
-    const script = document.createElement("script");
-    script.src = to("assets/holiday-theme.js");
-    script.dataset.djpcdHolidayTheme = "true";
-    document.head.appendChild(script);
-  }
-
-  function loadThemeEngine() {
-    if (window.DJThemeEngine) {
-      loadHolidayTheme();
+  function loadOnce(src, dataKey, globalName, onLoad) {
+    if (globalName && window[globalName]) {
+      if (onLoad) onLoad();
       return;
     }
 
-    const existing = document.querySelector("script[data-djpcd-theme-engine]");
+    const selector = `script[data-${dataKey}]`;
+    const existing = document.querySelector(selector);
     if (existing) {
-      existing.addEventListener("load", loadHolidayTheme, { once: true });
+      if (onLoad) existing.addEventListener("load", onLoad, { once: true });
       return;
     }
 
     const script = document.createElement("script");
-    script.src = to("assets/theme-engine.js");
-    script.dataset.djpcdThemeEngine = "true";
-    script.addEventListener("load", loadHolidayTheme, { once: true });
+    script.src = to(src);
+    script.dataset[dataKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = "true";
+    if (onLoad) script.addEventListener("load", onLoad, { once: true });
     document.head.appendChild(script);
   }
 
-  loadThemeEngine();
+  function loadGlobalEnhancements() {
+    loadOnce("assets/theme-engine.js", "djpcd-theme-engine", "DJThemeEngine", () => {
+      loadOnce("assets/holiday-theme.js", "djpcd-holiday-theme", "DJHolidayTheme");
+    });
+    loadOnce("assets/social-share.js", "djpcd-social-share", "DJSocialShare");
+  }
+
+  loadGlobalEnhancements();
 
   function normalizedPath(value) {
     try {
@@ -81,14 +79,13 @@
   }
 
   function ensureBrandAssets() {
-    if (!document.querySelector('link[data-djpcd-favicon]')) {
-      const favicon = document.createElement("link");
-      favicon.rel = "icon";
-      favicon.type = "image/svg+xml";
-      favicon.href = to("assets/images/djpcd-logo.svg");
-      favicon.dataset.djpcdFavicon = "true";
-      document.head.appendChild(favicon);
-    }
+    if (document.querySelector('link[data-djpcd-favicon]')) return;
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/svg+xml";
+    favicon.href = to("assets/images/djpcd-logo.svg");
+    favicon.dataset.djpcdFavicon = "true";
+    document.head.appendChild(favicon);
   }
 
   function renderStatusStrip() {
@@ -118,13 +115,11 @@
             <span class="brand-subtitle">Seattle PC Repair • Builds • Optimization</span>
           </span>
         </a>
-
         <div class="shared-tools" aria-label="Contact options">
           <a href="tel:${CONTACT.phone}" class="utility-link">CALL</a>
           <a href="sms:${CONTACT.sms}" class="utility-link">TEXT</a>
           <a href="mailto:${CONTACT.email}" class="utility-link">EMAIL</a>
         </div>
-
         <nav class="shared-nav" aria-label="Main navigation">
           ${navLink("index.html", "Home", "home")}
           ${navLink("pages/services.html", "Services", "/pages/services.html")}
@@ -144,7 +139,6 @@
   function renderFooter() {
     const footer = document.querySelector("footer");
     if (!footer) return;
-
     footer.innerHTML = `
       <div class="shared-shell">
         <div class="footer-copy">
@@ -165,10 +159,7 @@
     const el = document.createElement("div");
     el.id = "shared-mobile-cta";
     el.className = "shared-mobile-cta";
-    el.innerHTML = `
-      <a href="tel:${CONTACT.phone}">Call</a>
-      <a href="sms:${CONTACT.sms}">Text</a>
-      <a href="${to("pages/services.html")}">Services</a>`;
+    el.innerHTML = `<a href="tel:${CONTACT.phone}">Call</a><a href="sms:${CONTACT.sms}">Text</a><a href="${to("pages/services.html")}">Services</a>`;
     document.body.appendChild(el);
   }
 
@@ -203,7 +194,6 @@
     try {
       const response = await fetch(to("pages/blog.html"), { cache: "no-store" });
       if (!response.ok) throw new Error(`Blog request failed: ${response.status}`);
-
       const html = await response.text();
       const doc = new DOMParser().parseFromString(html, "text/html");
       const newestPost = doc.querySelector("main article");
@@ -212,7 +202,6 @@
       const postLink = newestPost.querySelector("h1 a, h2 a, h3 a, a[href*='assets/posts']");
       if (!postLink) throw new Error("Newest blog article has no post link");
 
-      const rawHref = postLink.getAttribute("href");
       const paragraphs = Array.from(newestPost.querySelectorAll("p"));
       const dateParagraph = paragraphs.find((p) => /^Posted\b/i.test(p.textContent.trim()));
       const categoryParagraph = paragraphs.find((p) => {
@@ -225,13 +214,9 @@
       });
 
       const blogPageUrl = new URL(to("pages/blog.html"), location.origin);
-      const resolvedPostUrl = new URL(rawHref, blogPageUrl);
-      const category = categoryParagraph
-        ? categoryParagraph.textContent.trim().replace(/\s*•\s*New\s*$/i, "")
-        : "Latest Post";
-      const date = dateParagraph
-        ? dateParagraph.textContent.trim().replace(/^Posted(?:\s+on)?\s*/i, "")
-        : "";
+      const resolvedPostUrl = new URL(postLink.getAttribute("href"), blogPageUrl);
+      const category = categoryParagraph ? categoryParagraph.textContent.trim().replace(/\s*•\s*New\s*$/i, "") : "Latest Post";
+      const date = dateParagraph ? dateParagraph.textContent.trim().replace(/^Posted(?:\s+on)?\s*/i, "") : "";
 
       link.href = resolvedPostUrl.href;
       title.textContent = postLink.textContent.trim();
@@ -250,10 +235,9 @@
     }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       });
     }, { threshold: 0.08 });
     document.querySelectorAll(".fade-in-up").forEach((el) => observer.observe(el));

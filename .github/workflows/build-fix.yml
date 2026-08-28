@@ -24,7 +24,11 @@ jobs:
           test -f style.css
           test -f script.js
           test -f assets/shared-layout.js
+          test -f assets/theme-engine.js
+          test -f assets/holiday-theme.js
+          test -f assets/social-share.js
           test -f assets/images/djpcd-logo.svg
+          test -f assets/images/logo.png
           test -f pages/services.html
           test -f pages/blog.html
           test -f pages/faq.html
@@ -33,4 +37,7 @@ jobs:
         run: |
           node --check script.js
           node --check assets/shared-layout.js
+          node --check assets/theme-engine.js
+          node --check assets/holiday-theme.js
+          node --check assets/social-share.js
           node --check assets/router.js

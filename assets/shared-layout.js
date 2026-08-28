@@ -22,6 +22,35 @@
     return BASE + path.replace(/^\/+/, "");
   }
 
+  function loadHolidayTheme() {
+    if (window.DJHolidayTheme || document.querySelector("script[data-djpcd-holiday-theme]")) return;
+    const script = document.createElement("script");
+    script.src = to("assets/holiday-theme.js");
+    script.dataset.djpcdHolidayTheme = "true";
+    document.head.appendChild(script);
+  }
+
+  function loadThemeEngine() {
+    if (window.DJThemeEngine) {
+      loadHolidayTheme();
+      return;
+    }
+
+    const existing = document.querySelector("script[data-djpcd-theme-engine]");
+    if (existing) {
+      existing.addEventListener("load", loadHolidayTheme, { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = to("assets/theme-engine.js");
+    script.dataset.djpcdThemeEngine = "true";
+    script.addEventListener("load", loadHolidayTheme, { once: true });
+    document.head.appendChild(script);
+  }
+
+  loadThemeEngine();
+
   function normalizedPath(value) {
     try {
       const url = new URL(value, location.href);

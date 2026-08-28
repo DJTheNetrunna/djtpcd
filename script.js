@@ -96,7 +96,12 @@
 
     footer.innerHTML = `
       <div class="shared-shell">
-        <p>© 2026 DJ THE PC DUDE</p>
+        <div>
+          <p>© 2026 DJ THE PC DUDE</p>
+          <p class="mt-2 text-xs text-gray-400">
+            Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.
+          </p>
+        </div>
 
         <div class="shared-footer-tags">
           <a href="${safe("pages/privacy.html")}" class="utility-link">Privacy</a>

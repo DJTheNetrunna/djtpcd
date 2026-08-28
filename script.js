@@ -24,6 +24,16 @@
     return BASE + path.replace(/^\/+/, "");
   }
 
+  function loadThemeEngine() {
+    if (window.DJThemeEngine || document.querySelector("script[data-djpcd-theme-engine]")) return;
+    const script = document.createElement("script");
+    script.src = to("assets/theme-engine.js");
+    script.dataset.djpcdThemeEngine = "true";
+    document.head.appendChild(script);
+  }
+
+  loadThemeEngine();
+
   function normalizedPath(value) {
     try {
       const url = new URL(value, location.href);

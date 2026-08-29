@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech That Matters: Agent Security, Seattle AI, Raspberry Pi & Practical Builds | DJ The PC Dude</title>
+  <meta name="description" content="DJ The PC Dude filters the August 29, 2026 tech cycle: AI agent security, Seattle AI research, Raspberry Pi realities, local-first computing, Linux, open source, and practical build-to-income ideas." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="DJ The PC Dude" />
+  <link rel="canonical" href="https://djthepcdude.com/assets/posts/tech-that-matters-2026-08-29.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="DJ The PC Dude" />
+  <meta property="og:title" content="Tech That Matters: Agent Security, Seattle AI, Raspberry Pi & Practical Builds" />
+  <meta property="og:description" content="A no-hype August 29 tech briefing focused on consequential AI, Seattle technology, Linux, Raspberry Pi, open source, security, and practical project opportunities." />
+  <meta property="og:url" content="https://djthepcdude.com/assets/posts/tech-that-matters-2026-08-29.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://djthepcdude.com/assets/posts/tech-that-matters-2026-08-29.html#article",
+    "headline": "Tech That Matters: Agent Security, Seattle AI, Raspberry Pi & Practical Builds",
+    "datePublished": "2026-08-29",
+    "dateModified": "2026-08-29",
+    "author": {"@type": "Organization", "name": "DJ The PC Dude"},
+    "publisher": {"@type": "Organization", "name": "DJ The PC Dude", "url": "https://djthepcdude.com/"},
+    "mainEntityOfPage": "https://djthepcdude.com/assets/posts/tech-that-matters-2026-08-29.html"
+  }
+  </script>
+</head>
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
+  <header></header>
+  <main class="max-w-4xl mx-auto p-6">
+    <article class="card p-6 md:p-8">
+      <p class="text-cyan-400 font-bold uppercase tracking-wider mb-3">Tech That Matters • August 29, 2026</p>
+      <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4">Agent Security, Seattle AI, Raspberry Pi & Practical Builds</h1>
+      <p class="text-gray-400 mb-8">Posted August 29, 2026 • DJ The PC Dude • Seattle, Washington</p>
+
+      <p class="text-lg leading-8 mb-6">The useful tech story right now is not another chatbot launch. It is the shift toward software agents that can act, run tools, touch files, modify code, and stay active longer. That creates real productivity, but it also changes the security model: an AI agent with shell access should be treated more like an untrusted privileged process than a harmless assistant.</p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">AI agents are becoming an infrastructure problem</h2>
+      <p class="leading-7 mb-5">The important question is no longer only which model is smartest. The bigger question is what the model is allowed to do. Good agent setups need restricted filesystem access, limited network permissions, temporary credentials, command logs, Git checkpoints, test gates, and human approval before high-impact changes are deployed.</p>
+      <div class="bg-gray-800 rounded-xl p-5 my-6 overflow-x-auto"><pre class="whitespace-pre-wrap">agent
+  ↓
+restricted workspace
+  ↓
+repo / tool preflight
+  ↓
+execute in sandbox
+  ↓
+tests + Git diff
+  ↓
+human approval
+  ↓
+deploy</pre></div>
+      <p class="leading-7 mb-6">That is why a project such as <strong>repo-preflight</strong> remains interesting: inspect an unfamiliar GitHub repository before an agent installs or executes it, then recommend normal execution, sandboxing, manual review, or blocking based on explainable evidence.</p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Seattle signal: AI is moving into science and specialized work</h2>
+      <p class="leading-7 mb-5">Seattle's AI ecosystem keeps producing examples that are more interesting than generic assistant apps. Reporting this week highlighted an Allen Institute for AI system that surfaced a potentially important pattern in cancer data, while University of Washington research on low-power on-device audio AI points toward advanced inference running directly on earbuds and other edge devices.</p>
+      <p class="leading-7 mb-5">Another Seattle startup, OnTrade, is applying agents to wealth-management workflows rather than trying to build one assistant for everybody. That is a useful business signal: narrow automation tied to work people already pay for can be more valuable than a broad AI wrapper.</p>
+      <div class="border border-cyan-500/40 rounded-xl p-5 my-8 bg-cyan-950/20">
+        <h3 class="text-xl font-black text-cyan-300 mb-3">DJ The PC Dude Take</h3>
+        <p class="leading-7">For small technical businesses, the better AI opportunity is usually vertical: diagnostics, repair reports, intake summaries, inventory analysis, monitoring, or customer follow-up. The value comes from solving a real workflow, not from calling something an "AI employee."</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Raspberry Pi: build the software before buying more hardware</h2>
+      <p class="leading-7 mb-5">Raspberry Pi pricing has been under pressure from higher memory costs tied partly to the wider AI infrastructure boom. Raspberry Pi has explicitly raised prices on several higher-memory Pi 4, Pi 5, Compute Module, and related configurations during 2026.</p>
+      <p class="leading-7 mb-5">That makes right-sizing more important. If a project only needs network monitoring, a small web service, DNS, a dashboard, or simple automation, an older Pi, a low-memory model, a thin client, or an old mini-PC may be the better value.</p>
+      <p class="leading-7 mb-6">A strong example is a privacy-minimized network counter: the local machine observes the LAN, reduces the result to one number, and publishes only the count to a web page. The software can be proven on a regular Linux computer first, then moved to an always-on Pi later.</p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Linux and local-first computing still have an advantage</h2>
+      <p class="leading-7 mb-5">Linux remains an excellent environment for combining local models, command-line tools, containers, KVM/QEMU virtual machines, Git, and open-source security scanners. Instead of sending every task to a cloud model, a useful architecture is to keep routine processing local and escalate only difficult reasoning when necessary.</p>
+      <div class="bg-gray-800 rounded-xl p-5 my-6 overflow-x-auto"><pre class="whitespace-pre-wrap">local script / small model
+          ↓
+files + deterministic tools
+          ↓
+cloud model only when needed</pre></div>
+      <p class="leading-7 mb-6">This can reduce cost, limit data exposure, and make systems easier to audit.</p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Open source: learn the boring tools that compound</h2>
+      <p class="leading-7 mb-5">The most useful open-source stack is often not the flashiest. Git, QEMU/KVM, libvirt, DuckDB, ShellCheck, Gitleaks, Semgrep, Trivy, Syft, Grype, and OSV-style vulnerability data can be combined into tools that solve practical security and support problems.</p>
+      <p class="leading-7 mb-6">DuckDB is especially worth learning for small local applications because it gives you analytical SQL without requiring a separate database server. That makes it a good fit for storing PC diagnostic histories, scan results, benchmark data, website checks, or network measurements.</p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Best realistic build-to-income idea</h2>
+      <p class="leading-7 mb-5">A <strong>PC Health Snapshot</strong> is still one of the better small projects because the free tool itself can generate service leads instead of depending on ads or hype.</p>
+      <div class="bg-gray-800 rounded-xl p-5 my-6 overflow-x-auto"><pre class="whitespace-pre-wrap">Windows / Linux diagnostic script
+              ↓
+sanitized hardware + health data
+              ↓
+local DuckDB history
+              ↓
+rule-based explanation
+              ↓
+customer-friendly report
+              ↓
+repair / upgrade recommendation</pre></div>
+      <p class="leading-7 mb-6">Possible checks include storage health, free space, startup load, temperatures, RAM pressure, operating-system status, update condition, and obvious hardware bottlenecks. Keep the scanner free; charge for the repair, upgrade, cleanup, setup, or ongoing support.</p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Hype filter</h2>
+      <ul class="list-disc pl-6 space-y-3 leading-7 mb-8">
+        <li><strong>High signal:</strong> agent security, local-first AI, vertical automation, on-device inference, open-source security tooling, and practical edge computing.</li>
+        <li><strong>Worth watching:</strong> autonomous coding agents and long-running agent systems, but only with strong permission and review controls.</li>
+        <li><strong>Low signal:</strong> guaranteed AI passive-income systems, faceless content farms, auto-generated affiliate sites, and expensive multi-agent dashboards with no clear customer or workflow.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Sources worth reading</h2>
+      <ul class="list-disc pl-6 space-y-3 text-sm text-gray-300 leading-6 mb-8">
+        <li><a class="underline text-cyan-400" href="https://www.geekwire.com/2026/ai-turns-up-a-promising-finding-in-cancer-data-that-researchers-hadnt-noticed-for-years/" target="_blank" rel="noopener noreferrer">GeekWire: Seattle Ai2 cancer-data finding</a></li>
+        <li><a class="underline text-cyan-400" href="https://www.geekwire.com/2026/uw-ai-researcher-wins-top-marconi-award-and-aims-to-put-superhuman-hearing-in-billions-of-devices/" target="_blank" rel="noopener noreferrer">GeekWire: UW on-device AI hearing research</a></li>
+        <li><a class="underline text-cyan-400" href="https://www.geekwire.com/2026/pro-com-co-founders-reunite-to-launch-ontrade-an-ai-startup-for-the-wealth-management-industry/" target="_blank" rel="noopener noreferrer">GeekWire: OnTrade and specialized AI agents</a></li>
+        <li><a class="underline text-cyan-400" href="https://www.raspberrypi.com/news/more-memory-driven-price-rises/" target="_blank" rel="noopener noreferrer">Raspberry Pi: memory-driven price increases</a></li>
+        <li><a class="underline text-cyan-400" href="https://www.raspberrypi.com/news/" target="_blank" rel="noopener noreferrer">Raspberry Pi News: current projects and releases</a></li>
+      </ul>
+
+      <p class="leading-7 mb-6">The recurring pattern is simple: the strongest technology opportunities right now combine real automation, local control, security, and a problem somebody already needs solved. Build the useful system first. Add AI only where it improves the result.</p>
+
+      <p class="mb-3"><a class="underline font-bold text-cyan-400" href="/pages/services.html">View DJ The PC Dude services &amp; pricing →</a></p>
+      <p><a href="/pages/blog.html" class="underline text-cyan-400">← Back to Blog</a></p>
+    </article>
+  </main>
+  <footer></footer>
+  <script src="/assets/shared-layout.js" defer></script>
+</body>
+</html>

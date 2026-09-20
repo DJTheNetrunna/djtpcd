@@ -533,3 +533,7 @@ footer .shared-shell {
   }
   .fade-in-up { opacity: 1; transform: none; }
 }
+
+
+/* Orca mascot system */
+.service-card{position:relative;overflow:hidden}.service-orca{display:block;width:82px;height:82px;margin-bottom:14px;filter:drop-shadow(0 8px 18px rgba(22,140,255,.22));transition:transform 180ms ease,filter 180ms ease}.service-card:hover .service-orca{transform:translateY(-3px) rotate(-2deg) scale(1.04);filter:drop-shadow(0 10px 24px rgba(39,215,242,.34))}.service-card::after{content:"";position:absolute;width:120px;height:120px;right:-55px;top:-55px;border-radius:50%;background:radial-gradient(circle,rgba(39,215,242,.12),transparent 68%);pointer-events:none}@media(max-width:520px){.service-orca{width:68px;height:68px}}

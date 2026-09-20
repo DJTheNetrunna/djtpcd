@@ -533,3 +533,18 @@ footer .shared-shell {
   }
   .fade-in-up { opacity: 1; transform: none; }
 }
+
+
+/* DJ The PC Dude illustrated orca icon system.
+   Uses the approved mascot artwork sprite at /assets/images/djpcd-orca-icons.jpg. */
+.service-mascot-card{position:relative;overflow:hidden}
+.dj-orca-icon{display:block;width:96px;height:96px;margin:0 0 14px;border-radius:22px;background-image:url('/assets/images/djpcd-orca-icons.jpg');background-repeat:no-repeat;background-size:480px 384px;box-shadow:0 10px 26px rgba(0,180,255,.16);transition:transform .18s ease,box-shadow .18s ease}
+.service-mascot-card:hover .dj-orca-icon{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 30px rgba(0,210,255,.25)}
+/* 5-column × 4-row artwork grid; positions select the matching original character. */
+.dj-orca-software{background-position:-96px 0}
+.dj-orca-optimize{background-position:-384px 0}
+.dj-orca-linux{background-position:-96px -96px}
+.dj-orca-windows{background-position:-192px -96px}
+.dj-orca-security{background-position:-96px -192px}
+.dj-orca-hardware{background-position:0 -288px}
+@media(max-width:520px){.dj-orca-icon{width:80px;height:80px;background-size:400px 320px}.dj-orca-software{background-position:-80px 0}.dj-orca-optimize{background-position:-320px 0}.dj-orca-linux{background-position:-80px -80px}.dj-orca-windows{background-position:-160px -80px}.dj-orca-security{background-position:-80px -160px}.dj-orca-hardware{background-position:0 -240px}}

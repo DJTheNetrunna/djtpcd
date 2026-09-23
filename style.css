@@ -535,16 +535,11 @@ footer .shared-shell {
 }
 
 
-/* DJ The PC Dude illustrated orca icon system.
-   Uses the approved mascot artwork sprite at /assets/images/djpcd-orca-icons.jpg. */
-.service-mascot-card{position:relative;overflow:hidden}
-.dj-orca-icon{display:block;width:96px;height:96px;margin:0 0 14px;border-radius:22px;background-image:url('/assets/images/djpcd-orca-icons.jpg');background-repeat:no-repeat;background-size:480px 384px;box-shadow:0 10px 26px rgba(0,180,255,.16);transition:transform .18s ease,box-shadow .18s ease}
-.service-mascot-card:hover .dj-orca-icon{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 30px rgba(0,210,255,.25)}
-/* 5-column × 4-row artwork grid; positions select the matching original character. */
-.dj-orca-software{background-position:-96px 0}
-.dj-orca-optimize{background-position:-384px 0}
-.dj-orca-linux{background-position:-96px -96px}
-.dj-orca-windows{background-position:-192px -96px}
-.dj-orca-security{background-position:-96px -192px}
-.dj-orca-hardware{background-position:0 -288px}
-@media(max-width:520px){.dj-orca-icon{width:80px;height:80px;background-size:400px 320px}.dj-orca-software{background-position:-80px 0}.dj-orca-optimize{background-position:-320px 0}.dj-orca-linux{background-position:-80px -80px}.dj-orca-windows{background-position:-160px -80px}.dj-orca-security{background-position:-80px -160px}.dj-orca-hardware{background-position:0 -240px}}
+/* DJ The PC Dude mascot icon system — original logo remains unchanged. */
+.mascot-card,.service-mascot-card{position:relative;overflow:hidden}
+.mascot-icon{display:block;width:104px;height:104px;object-fit:contain;margin:0 0 14px;filter:drop-shadow(0 10px 20px rgba(0,174,255,.18));transition:transform .18s ease,filter .18s ease}
+.mascot-card:hover .mascot-icon,.service-mascot-card:hover .mascot-icon{transform:translateY(-3px) scale(1.035);filter:drop-shadow(0 14px 25px rgba(0,210,255,.28))}
+.mascot-page-heading{position:relative;padding-right:min(18vw,180px)}
+.mascot-heading{position:absolute;right:0;top:-18px;width:min(16vw,150px);height:auto;object-fit:contain}
+.mascot-feature{width:min(62vw,260px);height:auto;object-fit:contain;filter:drop-shadow(0 16px 28px rgba(0,180,255,.22))}
+@media(max-width:640px){.mascot-icon{width:86px;height:86px}.mascot-page-heading{padding-right:0;padding-top:100px}.mascot-heading{left:0;right:auto;top:0;width:92px}}

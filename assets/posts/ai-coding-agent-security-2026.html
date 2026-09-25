@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Coding Agents Need Security Boundaries, Not Just Better Prompts | DJ The PC Dude</title>
+  <meta name="description" content="AI coding agents can edit repositories, add dependencies and handle credentials. Here is a practical security model using isolation, CodeQL, dependency checks, secret scanning and human review." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://djthepcdude.com/assets/posts/ai-coding-agent-security-2026.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="AI Coding Agents Need Security Boundaries, Not Just Better Prompts" />
+  <meta property="og:description" content="Treat coding agents like powerful untrusted processes: isolate them, validate their changes, scan dependencies and review before deployment." />
+  <meta property="og:url" content="https://djthepcdude.com/assets/posts/ai-coding-agent-security-2026.html" />
+  <meta property="og:image" content="https://djthepcdude.com/assets/images/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "@id":"https://djthepcdude.com/assets/posts/ai-coding-agent-security-2026.html#article",
+    "headline":"AI Coding Agents Need Security Boundaries, Not Just Better Prompts",
+    "datePublished":"2026-09-25",
+    "dateModified":"2026-09-25",
+    "author":{"@type":"Organization","name":"DJ The PC Dude"},
+    "publisher":{"@type":"Organization","name":"DJ The PC Dude","url":"https://djthepcdude.com/"},
+    "mainEntityOfPage":"https://djthepcdude.com/assets/posts/ai-coding-agent-security-2026.html"
+  }
+  </script>
+</head>
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
+<header></header>
+<main class="max-w-4xl mx-auto p-6">
+<article class="card p-6 md:p-8">
+  <img src="/assets/images/logo.png" alt="DJ The PC Dude AI coding agent security guide" class="mb-6 h-52 w-full rounded-xl border border-cyan-400/20 bg-black/30 object-contain p-4" />
+  <p class="text-cyan-400 font-bold uppercase tracking-wider mb-3">AI Security Guide</p>
+  <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4">AI Coding Agents Need Security Boundaries, Not Just Better Prompts</h1>
+  <p class="text-gray-400 mb-8">September 25, 2026 • DJ The PC Dude</p>
+
+  <p class="text-lg leading-8 mb-6">Coding agents can now modify repositories, install dependencies, run tests and open pull requests. That is useful, but it also means an AI tool can touch the same systems a developer can. Security has to come from architecture, not from hoping the prompt says “be careful.”</p>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">GitHub is already validating agent-generated code</h2>
+  <p class="leading-7 mb-5">GitHub made security validation generally available for third-party coding agents in June 2026. Agent-created code can be checked with CodeQL, dependency analysis against the GitHub Advisory Database and secret scanning for exposed credentials. GitHub says these protections are designed to catch vulnerabilities, risky dependencies and leaked tokens before an agent finalizes a pull request.</p>
+  <p class="leading-7 mb-6">That is a strong signal: agent-generated code should be treated like any other untrusted change until it has passed automated checks and human review.</p>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">A safer agent workflow</h2>
+  <div class="bg-gray-950 rounded-xl p-5 border border-gray-700 mb-6 overflow-x-auto">
+    <pre class="whitespace-pre-wrap text-sm leading-7">untrusted repository
+      ↓
+static inspection
+      ↓
+throwaway clone / worktree / VM
+      ↓
+limited credentials
+      ↓
+agent edits
+      ↓
+tests + CodeQL + dependency checks
+      ↓
+secret scan
+      ↓
+human-reviewed diff
+      ↓
+merge / deploy</pre>
+  </div>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">What I would restrict first</h2>
+  <ul class="list-disc pl-6 space-y-3 leading-7 mb-8">
+    <li><strong>Filesystem:</strong> do not give an experimental agent unrestricted access to your entire home directory.</li>
+    <li><strong>Credentials:</strong> use temporary or narrowly scoped tokens instead of permanent administrator credentials.</li>
+    <li><strong>Network:</strong> an agent should not automatically be allowed to contact any host on the internet.</li>
+    <li><strong>Git:</strong> use branches or worktrees rather than letting an agent push directly to the production branch.</li>
+    <li><strong>Dependencies:</strong> inspect new packages, install scripts and lifecycle hooks before trusting them.</li>
+    <li><strong>Secrets:</strong> keep API keys out of repositories and review environment-variable access.</li>
+  </ul>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Why repository preflight checks matter</h2>
+  <p class="leading-7 mb-5">Before allowing an agent to install or run an unfamiliar GitHub project, a simple preflight scanner could check maintenance activity, licenses, security policy, install scripts, GitHub Actions, dependencies, shell hooks, MCP configuration and known advisories.</p>
+  <p class="leading-7 mb-6">The value is not a magic score. The value is evidence: what the project can execute, what it wants access to, and what changed.</p>
+
+  <div class="border border-cyan-500/40 rounded-xl p-5 my-8 bg-cyan-950/20">
+    <h2 class="text-xl font-black text-cyan-300 mb-3">DJ The PC Dude Take</h2>
+    <p class="leading-7">The smarter agents become, the more important ordinary security engineering becomes. Sandboxes, permissions, backups, logs and review are not anti-AI; they are what make powerful automation safe enough to use.</p>
+  </div>
+
+  <section class="border-t border-gray-700 pt-6 mt-8">
+    <h2 class="text-lg font-bold mb-3">Source</h2>
+    <p class="text-sm text-gray-400 leading-6"><a class="underline text-cyan-400" href="https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents/" target="_blank" rel="noopener noreferrer">GitHub Changelog: Security validation for third-party coding agents</a></p>
+  </section>
+
+  <p class="mt-8"><a href="/pages/blog.html" class="underline text-cyan-400">← Back to Blog</a></p>
+</article>
+</main>
+<footer></footer>
+<script src="/assets/shared-layout.js" defer></script>
+</body>
+</html>

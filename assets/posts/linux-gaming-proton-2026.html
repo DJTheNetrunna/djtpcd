@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linux Gaming in 2026: Proton Is Better, but Compatibility Still Changes | DJ The PC Dude</title>
+  <meta name="description" content="Proton 11, Proton Experimental and anti-cheat changes keep Linux gaming moving fast. Here is a practical troubleshooting workflow for Fedora, SteamOS and Steam Deck users." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://djthepcdude.com/assets/posts/linux-gaming-proton-2026.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Linux Gaming in 2026: Proton Is Better, but Compatibility Still Changes" />
+  <meta property="og:description" content="A practical Linux gaming guide to Proton versions, regressions, anti-cheat and troubleshooting on Fedora and SteamOS." />
+  <meta property="og:url" content="https://djthepcdude.com/assets/posts/linux-gaming-proton-2026.html" />
+  <meta property="og:image" content="https://djthepcdude.com/assets/images/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "@id":"https://djthepcdude.com/assets/posts/linux-gaming-proton-2026.html#article",
+    "headline":"Linux Gaming in 2026: Proton Is Better, but Compatibility Still Changes",
+    "datePublished":"2026-09-25",
+    "dateModified":"2026-09-25",
+    "author":{"@type":"Organization","name":"DJ The PC Dude"},
+    "publisher":{"@type":"Organization","name":"DJ The PC Dude","url":"https://djthepcdude.com/"},
+    "mainEntityOfPage":"https://djthepcdude.com/assets/posts/linux-gaming-proton-2026.html"
+  }
+  </script>
+</head>
+<body class="bg-gradient-to-tr from-gray-900 to-black text-white font-mono min-h-screen">
+<header></header>
+<main class="max-w-4xl mx-auto p-6">
+<article class="card p-6 md:p-8">
+  <img src="/assets/images/logo.png" alt="DJ The PC Dude Linux gaming and Proton guide" class="mb-6 h-52 w-full rounded-xl border border-cyan-400/20 bg-black/30 object-contain p-4" />
+  <p class="text-cyan-400 font-bold uppercase tracking-wider mb-3">Linux Gaming Guide</p>
+  <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4">Linux Gaming in 2026: Proton Is Better, but Compatibility Still Changes</h1>
+  <p class="text-gray-400 mb-8">September 25, 2026 • Fedora, SteamOS &amp; Steam Deck</p>
+
+  <p class="text-lg leading-8 mb-6">Linux gaming has improved enormously, but “works on Proton” is not a permanent status. A publisher update, anti-cheat change, launcher update, driver regression or new Proton version can turn a working game into a broken one overnight.</p>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Proton 11 is the current stable generation</h2>
+  <p class="leading-7 mb-5">Valve's current release list shows Proton 11.0-2 as the latest stable release, while Proton Experimental continues to receive newer game-specific fixes. Experimental currently includes all changes from Proton 11.0-2 plus additional compatibility work.</p>
+  <p class="leading-7 mb-6">That does not mean Experimental is automatically the correct choice. Valve's own issue tracker contains regressions where a game works on an older Proton release but fails on a newer one.</p>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Use Proton versions like rollback points</h2>
+  <div class="bg-gray-950 rounded-xl p-5 border border-gray-700 mb-6 overflow-x-auto">
+    <pre class="whitespace-pre-wrap text-sm leading-7">Game stops working
+    ↓
+check current Proton
+    ↓
+try Proton stable
+    ↓
+try Proton Experimental
+    ↓
+try the last known-good older version
+    ↓
+check anti-cheat / launcher / driver changes
+    ↓
+only then modify prefixes or DLLs</pre>
+  </div>
+
+  <p class="leading-7 mb-6">This approach prevents a common mistake: changing five things at once and then having no idea which change actually fixed the game.</p>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">Anti-cheat is still the unpredictable layer</h2>
+  <p class="leading-7 mb-5">Community compatibility trackers continue to show mixed results. Some anti-cheat games work normally, some require a particular Proton version, some work only in single-player, and others remain completely broken.</p>
+  <p class="leading-7 mb-6">That is important because anti-cheat support is often a publisher decision rather than a Proton limitation. A technically compatible game can still be blocked if its anti-cheat configuration does not permit Linux.</p>
+
+  <h2 class="text-2xl font-bold text-cyan-400 mt-10 mb-4">A useful troubleshooting record</h2>
+  <p class="leading-7 mb-4">For each game, keep a tiny compatibility note:</p>
+  <ul class="list-disc pl-6 space-y-3 leading-7 mb-8">
+    <li>Game and Steam App ID</li>
+    <li>Linux distribution and kernel</li>
+    <li>GPU and driver version</li>
+    <li>Proton version</li>
+    <li>Anti-cheat status</li>
+    <li>Mods and mod loader</li>
+    <li>Launch options</li>
+    <li>Last date verified</li>
+  </ul>
+
+  <p class="leading-7 mb-6">That last field matters. Linux compatibility information gets stale quickly.</p>
+
+  <div class="border border-cyan-500/40 rounded-xl p-5 my-8 bg-cyan-950/20">
+    <h2 class="text-xl font-black text-cyan-300 mb-3">DJ The PC Dude Take</h2>
+    <p class="leading-7">Linux gaming is no longer a niche experiment, but troubleshooting still rewards discipline. Preserve known-good Proton versions, change one variable at a time, and separate game bugs from driver, anti-cheat and mod problems.</p>
+  </div>
+
+  <section class="border-t border-gray-700 pt-6 mt-8">
+    <h2 class="text-lg font-bold mb-3">Sources</h2>
+    <p class="text-sm text-gray-400 leading-6 mb-2"><a class="underline text-cyan-400" href="https://github.com/ValveSoftware/Proton/releases" target="_blank" rel="noopener noreferrer">ValveSoftware/Proton releases</a></p>
+    <p class="text-sm text-gray-400 leading-6 mb-2"><a class="underline text-cyan-400" href="https://github.com/ValveSoftware/Proton/wiki/Changelog" target="_blank" rel="noopener noreferrer">Valve Proton Experimental changelog</a></p>
+    <p class="text-sm text-gray-400 leading-6"><a class="underline text-cyan-400" href="https://www.gamingonlinux.com/anticheat/updates/" target="_blank" rel="noopener noreferrer">GamingOnLinux anti-cheat compatibility tracker</a></p>
+  </section>
+
+  <p class="mt-8"><a href="/pages/blog.html" class="underline text-cyan-400">← Back to Blog</a></p>
+</article>
+</main>
+<footer></footer>
+<script src="/assets/shared-layout.js" defer></script>
+</body>
+</html>

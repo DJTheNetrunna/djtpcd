@@ -1,5 +1,12 @@
-<html>
-<head></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DJ The PC Dude | Seattle PC Repair & Custom Builds</title>
+  <meta name="description" content="Seattle PC repair, malware cleanup, custom builds, and performance tuning with clear pricing and practical support." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+</head>
 <body>
 <img src="//ipv6.he.net/certification/create_badge.php?pass_name=Austine7&amp;badge=2" style="border: 0; width: 250px; height: 194px" alt="IPv6 Certification Badge for Austine7"></img>
 </body>

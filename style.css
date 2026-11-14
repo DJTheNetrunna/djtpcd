@@ -387,7 +387,7 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(39, 215, 242, 0.09);
 }
 
-button,
+button:not(.template-cover),
 [type="submit"],
 .btn {
   border: 1px solid rgba(39, 215, 242, 0.34);
@@ -400,7 +400,7 @@ button,
   transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
-button:hover,
+button:not(.template-cover):hover,
 [type="submit"]:hover,
 .btn:hover {
   transform: translateY(-1px);

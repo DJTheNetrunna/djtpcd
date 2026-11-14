@@ -35,6 +35,12 @@ Then open `http://127.0.0.1:8080`.
 - `index.html`: homepage
 - `pages/services.html`: service tiers, trust stack, service area map
 - `pages/blog.html`: posts index
+- `pages/templates.html`: native DJ Template Studio catalog, search, category/price filters, responsive demos, and free HTML downloads
+- `assets/template-catalog.js`: editable template listings and proposed USD prices
+- `assets/template-studio.js`, `assets/template-studio.css`: storefront behavior and theme-aware styles
+- `assets/templates/`: eight self-contained one-page demos; Launchpad, Local Pro, and Bento Folio are downloadable free starters. Premium listings are previews only; checkout is not connected.
+
+Template storefront records its shortlist in browser local storage. Contact customization requests use the existing site contact page. Demo interfaces do not include backend, AI, payment, or email services. Free starter license terms are embedded in each starter’s source; premium commercial packages and terms remain pending.
 - `pages/faq.html`: FAQ
 - `pages/case-studies.html`: proof/portfolio cases
 - `pages/privacy.html`: privacy policy

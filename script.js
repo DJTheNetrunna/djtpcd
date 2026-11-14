@@ -124,6 +124,7 @@
           ${navLink("index.html", "Home", "home")}
           ${navLink("pages/services.html", "Services", "/pages/services.html")}
           ${navLink("pages/blog.html", "Blog", "/pages/blog.html")}
+          ${navLink("pages/templates.html", "Templates", "/pages/templates.html")}
           ${navLink("pages/faq.html", "FAQ", "/pages/faq.html")}
           ${navLink("pages/case-studies.html", "Case Studies", "/pages/case-studies.html")}
           ${navLink("pages/encrypt%20decrypt%20tool/index.html", "Tools", "/encrypt decrypt tool/")}

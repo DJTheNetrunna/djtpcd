@@ -71,3 +71,5 @@ Contributions are welcome.
 Use a license of your choice (MIT recommended) before production use.
 
 Template preview isolation: the site theme excludes `.template-cover` artwork. Live demos run in sandboxed iframes with their own CSS; no site theme or holiday scripts are loaded inside them. Preview frames use a normal color scheme. Theme changes apply to the surrounding storefront only.
+
+The Template Studio page disables the global composited scanline overlay (`body::after`) and pins thumbnail card metadata/controls to a neutral palette, preventing both pixel tinting and inherited theme colors.

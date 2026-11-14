@@ -3,3 +3,11 @@
 /* Template artwork and embedded documents retain their own palettes. */
 .studio-page .template-cover{color-scheme:normal;font-family:Arial,sans-serif;background:var(--surface,#1c2632)!important;color:var(--ink,#f7f7f7)!important;border-color:transparent!important;text-shadow:none!important;box-shadow:none!important;transition:none}
 .studio-page .demo-stage iframe{color-scheme:normal}
+
+/* The global scanline overlay composites above previews and tints their pixels. */
+body.studio-page::after{display:none!important;content:none!important;animation:none!important}
+/* Keep the complete thumbnail card neutral, including metadata and hover states. */
+.studio-page .template-card{--studio-accent:#d9e2ec;--studio-panel:#111925;--studio-text:#f3f7fb;--studio-muted:#a8b3c2;--text:#f3f7fb;--muted:#a8b3c2;--line:#344152;color:#f3f7fb!important;background:#111925!important;border-color:#344152!important;box-shadow:none!important;filter:none!important;transition:transform .2s}
+.studio-page .template-card:hover{background:#111925!important;border-color:#6f8095!important;box-shadow:none!important}
+.studio-page .template-card .studio-secondary{background:#1c2735!important;color:#f3f7fb!important;border-color:#455568!important;box-shadow:none!important;text-shadow:none!important}
+.studio-page .template-card .template-cover:focus-visible{outline-color:#f3f7fb}

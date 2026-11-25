@@ -23,3 +23,9 @@
 .product-photo { margin: .8rem 0 1rem; }
 .product-photo img { display: block; width: 100%; height: clamp(10rem, 20vw, 15rem); object-fit: contain; background: #f6f7f5; border-radius: .35rem; }
 .product-photo figcaption { margin-top: .3rem; color: #425667; font-size: .76rem; }
+
+.buying-help { margin: 1.5rem 0; padding: 1.15rem; background: white; border: 1px solid #ccd6d7; border-radius: .6rem; }
+.buying-help h2 { font-size: 1.25rem; }
+.buying-help details + details { border-top: 1px solid #dce4e3; }
+.buying-help summary { padding: .65rem 0; cursor: pointer; font-weight: 650; }
+.buying-help p { max-width: 78ch; }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Fake Virus Pop-Ups &amp; Tech Support Scams</title><desc id="desc">SECURITY GUIDE</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020617"/><stop offset=".55" stop-color="#07111f"/><stop offset="1" stop-color="#0f172a"/></linearGradient>
+  <radialGradient id="glow" cx="75%" cy="42%" r="50%"><stop stop-color="#ef4444" stop-opacity=".24"/><stop offset="1" stop-color="#ef4444" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#94a3b8" stroke-opacity=".08"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/><rect width="1600" height="900" fill="url(#glow)"/>
+<circle cx="1420" cy="110" r="180" fill="#f59e0b" opacity=".08"/><circle cx="1320" cy="720" r="220" fill="#ef4444" opacity=".07"/>
+<rect x="92" y="128" width="680" height="62" rx="31" fill="#ef4444" opacity=".16"/><text x="128" y="169" fill="#ef4444" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="4">SECURITY GUIDE</text>
+<text x="105" y="310" fill="#f8fafc" font-family="Arial,sans-serif" font-size="66" font-weight="800">Fake Virus Pop-Ups &amp; Tech</text>
+<text x="105" y="390" fill="#f8fafc" font-family="Arial,sans-serif" font-size="66" font-weight="800">Support Scams</text>
+<text x="105" y="470" fill="#f8fafc" font-family="Arial,sans-serif" font-size="66" font-weight="800"></text>
+<rect x="105" y="560" width="520" height="8" rx="4" fill="#ef4444"/><rect x="105" y="595" width="390" height="8" rx="4" fill="#f59e0b" opacity=".8"/>
+
+    <path d="M1090 180l165 300H925l165-300z" fill="#2a0b0b" stroke="#ef4444" stroke-width="10"/>
+    <path d="M1090 285v95" stroke="#ef4444" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="1090" cy="425" r="12" fill="#ef4444"/>
+    <rect x="960" y="520" width="260" height="70" rx="18" fill="#111827" stroke="#f59e0b" stroke-width="8"/>
+<text x="105" y="805" fill="#94a3b8" font-family="Arial,sans-serif" font-size="24">DJ THE PC DUDE • SEATTLE TECH</text>
+</svg>

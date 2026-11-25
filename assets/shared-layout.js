@@ -135,6 +135,8 @@
           ${navLink("index.html", "Home", "home")}
           ${navLink("pages/services.html", "Services", "/pages/services.html")}
           ${navLink("pages/blog.html", "Blog", "/pages/blog.html")}
+          ${navLink("pages/store.html", "Gear Store", "/pages/store.html")}
+          ${navLink("pages/templates.html", "Templates", "/pages/templates.html")}
           ${navLink("pages/faq.html", "FAQ", "/pages/faq.html")}
           ${navLink("pages/case-studies.html", "Case Studies", "/pages/case-studies.html")}
           ${navLink("pages/encrypt%20decrypt%20tool/index.html", "Tools", "/encrypt decrypt tool/")}
@@ -151,7 +153,7 @@
   function renderFooter() {
     const footer = document.querySelector("footer");
     if (!footer) return;
-    footer.innerHTML = `<div class="shared-shell"><div class="footer-copy"><p>© 2026 DJ THE PC DUDE</p><p class="footer-disclaimer">Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.</p></div><div class="shared-footer-tags"><a href="${to("pages/intake-checklist.html")}" class="utility-link">Intake</a><a href="${to("pages/wifi.html")}" class="utility-link">Wi-Fi</a><a href="${to("pages/privacy.html")}" class="utility-link">Privacy</a><a href="${to("pages/terms.html")}" class="utility-link">Terms</a></div></div>`;
+    footer.innerHTML = `<div class="shared-shell"><div class="footer-copy"><p>© 2026 DJ THE PC DUDE</p><p class="footer-disclaimer">Independent freelance tech service • Self-taught • No formal IT degree or industry certifications.</p></div><div class="shared-footer-tags"><a href="${to("pages/store.html")}" class="utility-link">Gear Store</a><a href="${to("pages/intake-checklist.html")}" class="utility-link">Intake</a><a href="${to("pages/wifi.html")}" class="utility-link">Wi-Fi</a><a href="${to("pages/privacy.html")}" class="utility-link">Privacy</a><a href="${to("pages/terms.html")}" class="utility-link">Terms</a></div></div>`;
   }
 
   function renderMobileCTA() {

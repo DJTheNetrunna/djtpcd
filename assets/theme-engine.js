@@ -382,7 +382,7 @@
       }
 
       .hero-cta:hover,
-      button,
+      button:not(.template-cover),
       [type="submit"],
       .btn {
         background:

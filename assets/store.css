@@ -19,3 +19,7 @@
 .department > p { max-width: 76ch; }
 .department .inventory { margin: 1rem 0; }
 .back-to-jobs { display: inline-block; padding: .4rem 0; font-size: .9rem; }
+
+.product-photo { margin: .8rem 0 1rem; }
+.product-photo img { display: block; width: 100%; height: clamp(10rem, 20vw, 15rem); object-fit: contain; background: #f6f7f5; border-radius: .35rem; }
+.product-photo figcaption { margin-top: .3rem; color: #425667; font-size: .76rem; }

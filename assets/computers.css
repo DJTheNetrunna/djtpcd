@@ -7,9 +7,9 @@
 .computer-guide section {margin:3rem 0}
 .computer-guide .disclosure {font-size:.9rem}
 .computer-picks {padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1rem}
-.computer-picks li {display:flex;flex-direction:column;border:1px solid #496275;background:#101e2a;color:#edf6fc;border-radius:.75rem;padding:1.15rem}
+.computer-picks li {display:flex;flex-direction:column;border:1px solid #ccd6d7;background:#fff;color:#152c3c;border-radius:.75rem;padding:1.15rem}
 .computer-picks h3 {font-size:1.25rem;line-height:1.3;margin:.4rem 0}
 .computer-picks p {margin:.35rem 0 .8rem}
-.computer-picks .budget {color:#8cebe1;font-weight:bold}
-.computer-picks .spec {color:#bfd4de;font-size:.9rem}
-.computer-picks a {color:#8cebe1;margin-top:auto;padding-top:.6rem}
+.computer-picks .budget {color:#07595b;font-weight:bold}
+.computer-picks .spec {color:#425667;font-size:.9rem}
+.computer-picks a {color:#07595b;margin-top:auto;padding-top:.6rem}

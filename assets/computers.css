@@ -13,3 +13,25 @@
 .computer-picks .budget {color:#07595b;font-weight:bold}
 .computer-picks .spec {color:#425667;font-size:.9rem}
 .computer-picks a {color:#07595b;margin-top:auto;padding-top:.6rem}
+
+.computer-guide .budget-help {
+  border-left: 4px solid #166563;
+  background: #e4efeb;
+  padding: .9rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.budget-help summary { cursor: pointer; font-weight: 650; }
+.budget-help p { max-width: 78ch; }
+.computer-guide nav a { border-color: #bacdca; background: white; text-decoration: none; }
+.computer-guide nav a:hover { border-color: #07595b; text-decoration: underline; }
+.computer-picks a {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: .65rem .9rem;
+  border-radius: .35rem;
+  color: white;
+  background: #125756;
+  font-weight: 650;
+  text-decoration: none;
+}
+.computer-picks a:hover { text-decoration: underline; }

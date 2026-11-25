@@ -14,3 +14,8 @@
 .guide-grid section { padding:1.25rem 0; border-top:1px solid #c7d4d3 }
 .guide-grid ul { margin:0; padding-left:1.15rem }
 .guide-grid li { margin:.55rem 0 }
+
+.department { margin: 2.5rem 0; padding-top: 1.5rem; border-top: 1px solid #c7d4d3; }
+.department > p { max-width: 76ch; }
+.department .inventory { margin: 1rem 0; }
+.back-to-jobs { display: inline-block; padding: .4rem 0; font-size: .9rem; }
